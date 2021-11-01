@@ -102,6 +102,7 @@ $catalogue = new MessageCatalogue('uz', array (
     'Each element of this collection should satisfy its own set of constraints.' => 'Ushbu to\'plamdagi har bir narsa o\'ziga xos cheklovlarni qondirishi kerak.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Qiymat Qimmatli qog\'ozlarning xalqaro identifikatsiya raqami (ISIN) ga mos emas.',
     'This value should be a valid expression.' => 'Ushbu qiymat to\'g\'ri ifoda bo\'lishi kerak.',
+    'This value is not a valid CSS color.' => 'Bu qiymat haqiqiy CSS rangi emas.',
     'This form should not contain extra fields.' => 'Ushbu fo\'rmada qo\'shimcha maydonlar bo\'lmasligi kerak.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Yuklab olingan fayl juda katta. Iltimos, kichikroq faylni yuklashga harakat qiling.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF qiymati yaroqsiz. Fo\'rmani qayta yuborishga harakat qiling.',
@@ -155,6 +156,8 @@ $catalogue = new MessageCatalogue('uz', array (
     'Account is locked.' => 'Akkunt bloklangan.',
     'Too many failed login attempts, please try again later.' => 'Kirish urinishlari muvaffaqiyatsiz tugadi, keyinroq qayta urinib ko\'ring.',
     'Invalid or expired login link.' => 'Kirish havolasi yaroqsiz yoki muddati tugagan.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Kirish uchun muvaffaqiyatsiz urinishlar, %minutes% daqiqadan so\'ng qayta urinib ko\'ring.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Kirish uchun muvaffaqiyatsiz urinishlar, %minutes% daqiqadan so\'ng qayta urinib ko\'ring.',
   ),
 ));
 
@@ -258,6 +261,9 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
     'This value should be a valid expression.' => 'This value should be a valid expression.',
+    'This value is not a valid CSS color.' => 'This value is not a valid CSS color.',
+    'This value is not a valid CIDR notation.' => 'This value is not a valid CIDR notation.',
+    'The value of the netmask should be between {{ min }} and {{ max }}.' => 'The value of the netmask should be between {{ min }} and {{ max }}.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',

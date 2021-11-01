@@ -101,6 +101,8 @@ $catalogue = new MessageCatalogue('gl', array (
     'This value should satisfy at least one of the following constraints:' => 'Este valor debe cumprir polo menos unha das seguintes restricións:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Cada elemento desta colección debe satisfacer o seu propio conxunto de restricións.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Este valor non é un número de identificación de valores internacionais (ISIN) válido.',
+    'This value should be a valid expression.' => 'Este valor debe ser unha expresión válida.',
+    'This value is not a valid CSS color.' => 'Este valor non é unha cor CSS válida.',
     'This form should not contain extra fields.' => 'Este formulario non debería conter campos adicionais.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'O arquivo subido é demasiado grande. Por favor, suba un arquivo máis pequeno.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'O token CSRF non é válido. Por favor, probe a enviar novamente o formulario.',
@@ -154,6 +156,8 @@ $catalogue = new MessageCatalogue('gl', array (
     'Account is locked.' => 'A conta está bloqueada.',
     'Too many failed login attempts, please try again later.' => 'Demasiados intentos de inicio de sesión fallados. Téntao de novo máis tarde.',
     'Invalid or expired login link.' => 'Ligazón de inicio de sesión non válida ou caducada.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Demasiados intentos de inicio de sesión errados, por favor, ténteo de novo en %minutes% minuto.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Demasiados intentos de inicio de sesión errados, por favor, ténteo de novo en %minutes% minutos.',
   ),
 ));
 
@@ -257,6 +261,9 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
     'This value should be a valid expression.' => 'This value should be a valid expression.',
+    'This value is not a valid CSS color.' => 'This value is not a valid CSS color.',
+    'This value is not a valid CIDR notation.' => 'This value is not a valid CIDR notation.',
+    'The value of the netmask should be between {{ min }} and {{ max }}.' => 'The value of the netmask should be between {{ min }} and {{ max }}.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',

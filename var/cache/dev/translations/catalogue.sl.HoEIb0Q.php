@@ -101,6 +101,8 @@ $catalogue = new MessageCatalogue('sl', array (
     'This value should satisfy at least one of the following constraints:' => 'Ta vrednost bi morala zadostiti vsaj eni izmed sledečih omejitev:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Vsak element te zbirke bi moral zadostiti svojemu lastnemu naboru omejitev.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Ta vrednost ni veljavna mednarodna identifikacijska koda vrednostnih papirjev (ISIN).',
+    'This value should be a valid expression.' => 'Ta vrednost bi morala biti veljaven izraz.',
+    'This value is not a valid CSS color.' => 'Ta vrednost ni veljavna barva CSS.',
     'This form should not contain extra fields.' => 'Ta obrazec ne sme vsebovati dodatnih polj.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Naložena datoteka je prevelika. Prosimo, poizkusite naložiti manjšo.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF vrednost je napačna. Prosimo, ponovno pošljite obrazec.',
@@ -154,6 +156,8 @@ $catalogue = new MessageCatalogue('sl', array (
     'Account is locked.' => 'Račun je zaklenjen.',
     'Too many failed login attempts, please try again later.' => 'Preveč neuspelih poskusov prijave, poskusite znova pozneje.',
     'Invalid or expired login link.' => 'Neveljavna ali potekla povezava prijave.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Preveč neuspelih poskusov prijave, poskusite znova čez %minutes% minuto.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Preveč neuspelih poskusov prijave, poskusite znova čez %minutes% minut.',
   ),
 ));
 
@@ -257,6 +261,9 @@ $catalogueEn = new MessageCatalogue('en', array (
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
     'This value should be a valid expression.' => 'This value should be a valid expression.',
+    'This value is not a valid CSS color.' => 'This value is not a valid CSS color.',
+    'This value is not a valid CIDR notation.' => 'This value is not a valid CIDR notation.',
+    'The value of the netmask should be between {{ min }} and {{ max }}.' => 'The value of the netmask should be between {{ min }} and {{ max }}.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
