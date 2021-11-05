@@ -1,0 +1,3 @@
+{% if not app.user %}
+	{{ render(controller('App\\Controller\\LoginController::login')) }}
+{% endif %}
