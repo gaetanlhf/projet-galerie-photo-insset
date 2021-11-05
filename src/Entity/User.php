@@ -52,6 +52,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $nbLoginFailed;
 
+    /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     */
+    private $email;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -168,6 +173,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNbLoginFailed(int $nbLoginFailed): self
     {
         $this->nbLoginFailed = $nbLoginFailed;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
