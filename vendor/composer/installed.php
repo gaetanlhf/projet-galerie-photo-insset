@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v5.3.99',
-        'version' => '5.3.99.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
-        'name' => 'symfony/website-skeleton',
+        'reference' => 'd18152ce3b58f15b2af388c13d96f0641e64141e',
+        'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'd18152ce3b58f15b2af388c13d96f0641e64141e',
+            'dev_requirement' => false,
+        ),
         'composer/package-versions-deprecated' => array(
             'pretty_version' => '1.11.99.4',
             'version' => '1.11.99.4',
@@ -179,6 +188,15 @@
             'install_path' => __DIR__ . '/../friendsofphp/proxy-manager-lts',
             'aliases' => array(),
             'reference' => '006aa5d32f887a4db4353b13b5b5095613e0611f',
+            'dev_requirement' => false,
+        ),
+        'google/recaptcha' => array(
+            'pretty_version' => '1.2.4',
+            'version' => '1.2.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../google/recaptcha',
+            'aliases' => array(),
+            'reference' => '614f25a9038be4f3f2da7cbfd778dc5b357d2419',
             'dev_requirement' => false,
         ),
         'laminas/laminas-code' => array(
@@ -1252,15 +1270,6 @@
             'aliases' => array(),
             'reference' => '9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
             'dev_requirement' => true,
-        ),
-        'symfony/website-skeleton' => array(
-            'pretty_version' => 'v5.3.99',
-            'version' => '5.3.99.0',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => NULL,
-            'dev_requirement' => false,
         ),
         'symfony/yaml' => array(
             'pretty_version' => 'v5.3.6',
