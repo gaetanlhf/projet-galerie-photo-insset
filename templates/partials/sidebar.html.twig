@@ -1,5 +1,5 @@
 {% if not app.user %}
 	{{ render(controller('App\\Controller\\LoginController::login')) }}
 	<br>
-	{{ render(controller('App\\Controller\\RegistrationController::register')) }}
+	{{ render(controller('App\\Controller\\RegistrationUIController::registerUI')) }}
 {% endif %}
