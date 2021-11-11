@@ -35,7 +35,7 @@ class RegistrationController extends AbstractController
 
             // encode the plain password
             $user->setPassword($hashedPassword);
-            $user->setRoles(["USER"]);
+            $user->setRoles(["ROLE_USER"]);
             $user->setIsEnabled(true);
             $user->setNbLoginFailed("0");
 
@@ -45,18 +45,20 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
 
             $email = (new TemplatedEmail())
-                ->from("noreply@gaetan-le-heurt-finot.insset.ovh", "Gallerie photo")
-                ->to(new Address($user['email']))
+                ->from("noreply@dev.gaetanlhf.fr")
+                ->to(new Address($user->getEmail()))
                 ->subject("Votre mot de passe pour Galerie Photo")
                 ->htmlTemplate("emails/signup.html.twig")
                 ->context([
-                    'username' => $user['username'],
+                    'username' => $user->getUsername(),
                     'password' => $password
                 ]);
 
-            $mailer->send($email);
+            // $mailer->send($email);
 
-            return $this->redirectToRoute('app_home', array('success' => true));
+            $this->addFlash('register_suc', $password);
+
+            return $this->redirectToRoute('app_home');
         }
 
         $form_errors = array();
@@ -66,15 +68,14 @@ class RegistrationController extends AbstractController
             $form_errors[] = $error->getMessage();
         }
 
-
-        // dd($form_errors);
         $this->addFlash('register_err', $form_errors);
+        
         return $this->redirectToRoute('app_home');
     }
 
     public function genPwd(): String
     {
-        $length = "10";
+        $length = "8";
         $character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $string = "";
         $max = mb_strlen($character, '8bit') - 1;
