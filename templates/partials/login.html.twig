@@ -11,7 +11,7 @@
 				{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 		{% endif %}
 
-		<form method="post">
+		<form action="{{ path('app_home') }}" method="post">
 
 			<div class="input-group">
 				<span class="input-group-text bg-primary">
