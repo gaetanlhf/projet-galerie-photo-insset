@@ -15,9 +15,7 @@ use Symfony\Component\Mime\Address;
 
 class RegistrationController extends AbstractController
 {
-    /**
-     * @Route("/register", name="app_register")
-     */
+    #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer): Response
     {
         $user = new User();
@@ -33,7 +31,6 @@ class RegistrationController extends AbstractController
                 $password
             );
 
-            // encode the plain password
             $user->setPassword($hashedPassword);
             $user->setRoles(["ROLE_USER"]);
             $user->setIsEnabled(true);
@@ -42,7 +39,6 @@ class RegistrationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
 
             $email = (new TemplatedEmail())
                 ->from("noreply@dev.gaetanlhf.fr")
@@ -63,7 +59,6 @@ class RegistrationController extends AbstractController
 
         $form_errors = array();
 
-        //this part get global form errors (like csrf token error)
         foreach ($registrationForm->getErrors(true) as $error) {
             $form_errors[] = $error->getMessage();
         }
