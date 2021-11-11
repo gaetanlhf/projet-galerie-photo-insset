@@ -60,6 +60,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
+        $this->flashBag->add('login_suc', 'Vous avez été connecté avec succès !');
         return new RedirectResponse($this->urlGenerator->generate('app_home'));
     }
 
@@ -77,7 +78,11 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
                 $user->setNbLoginFailed($nbError);
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
-                $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essai(s)");
+                if (3 - $nbError != 1) {
+                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essais");
+                } else {
+                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essai");
+                }
             } else if ($nbError = 2 && $isEnabled == true) {
                 $nbError = $nbError + 1;
                 $user->setNbLoginFailed($nbError);
