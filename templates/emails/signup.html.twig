@@ -1,0 +1,16 @@
+{# templates/emails/signup.html.twig #}
+
+<h1>Bienvenue {{ username }} !</h1>
+
+<p>
+    Vous vous êtes inscrit sur Galerie photo avec l'adresse de courriel suivante :
+</p>
+<p><code>{{ email.to[0].address }}</code></p>
+<p>
+    Votre mot de passe est :
+</p>
+<p><code>{{ password }}</code></p>
+
+<p>
+    <a href="http://gaetan-le-heurt-finot.insset.ovh">Cliquez-ici pour vous rendre sur Galerie photo</a>
+</p>

@@ -1,0 +1,26 @@
+{% if not app.user %}
+	{% for errors in app.flashes('register_err') %}
+		<div class="alert alert-danger">
+			<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+			L'inscription a échoué :
+			{% for error in errors %}
+				{{ error }}<br>
+			{% endfor %}
+		</div>
+	{% endfor %}
+
+	{% for success in app.flashes('register_suc') %}
+		<div class="alert alert-success">
+			<i class="fa fa-check fa-fw" aria-hidden="true"></i>
+			Vous êtes désormais inscrit !<br>Votre mot de passe vous été envoyé par courriel :
+			{{ success }}
+		</div>
+	{% endfor %}
+	{{ render(controller('App\\Controller\\LoginController::login')) }}
+	<br>
+	{{ render(controller('App\\Controller\\RegistrationUIController::registerUI')) }}
+{% endif %}
+
+{% if app.user %}
+	{% include 'partials/userpanel.html.twig' %}
+{% endif %}

@@ -1,0 +1,55 @@
+<div class="card">
+	<div class="card-body text-center">
+		<h5 class="card-title">
+			<i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
+			Inscription</h5>
+		<h6 class="card-subtitle mb-2 text-muted">Simple comme bonjour !</h6>
+
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+			<i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>
+			S'inscrire</button>
+	</div>
+</div>
+
+<div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="registerModalLabel">
+					<i class="fa fa-user-plus fa-fw" aria-hidden="true"></i>
+					Inscription</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			{{ form_start(registrationForm, {'action': path('app_register'), 'method': 'POST'}) }}
+			<div class="modal-body">
+
+				<div class="form-group">
+					{{ form_label(registrationForm.username, "Pseudo") }}
+					{{ form_widget(registrationForm.username) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(registrationForm.email, "Adresse de courriel") }}
+					{{ form_widget(registrationForm.email) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(registrationForm.age, "Âge") }}
+					{{ form_widget(registrationForm.age) }}
+				</div>
+
+				<div class="form-group">
+					{{ form_label(registrationForm.captcha, "Captcha") }}
+					{{ form_row(registrationForm.captcha) }}
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">
+					<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
+					Go !</button>
+			</div>
+			{{ form_end(registrationForm) }}
+		</div>
+	</div>
+</div></div>
