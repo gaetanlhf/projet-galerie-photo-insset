@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
@@ -15,6 +16,9 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Authenticator\Passport\PassportInterface;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 class UserAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -23,18 +27,20 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
     public const LOGIN_ROUTE = 'app_home';
 
     private UrlGeneratorInterface $urlGenerator;
+    private $entityManager;
+    private $flashBag;
 
-    public function __construct(UrlGeneratorInterface $urlGenerator)
+    public function __construct(UrlGeneratorInterface $urlGenerator, EntityManagerInterface $entityManager, FlashBagInterface $flashBag)
     {
         $this->urlGenerator = $urlGenerator;
+        $this->entityManager = $entityManager;
+        $this->flashBag = $flashBag;
     }
 
     public function authenticate(Request $request): PassportInterface
     {
         $email = $request->request->get('email');
-
         $request->getSession()->set(Security::LAST_USERNAME, $email);
-
         return new Passport(
             new UserBadge($email),
             new PasswordCredentials($request->request->get('password')),
@@ -46,13 +52,42 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+        $email = $request->request->get('email');
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        $user->setNbLoginFailed("0");
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
-
-        // For example:
         return new RedirectResponse($this->urlGenerator->generate('app_home'));
-        //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    }
+
+    public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
+    {
+        $email = $request->request->get('email');
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        if (!$user) {
+            $this->flashBag->add("log_err", "La connexion a échoué, aucun compte n'a été trouvé.");
+        } else {
+            $nbError = $user->getNbLoginFailed();
+            $isEnabled = $user->getIsEnabled();
+            if ($nbError < 2) {
+                $nbError = $nbError + 1;
+                $user->setNbLoginFailed($nbError);
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+                $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essai(s)");
+            } else if ($nbError = 2 && $isEnabled == true) {
+                $nbError = $nbError + 1;
+                $user->setNbLoginFailed($nbError);
+                $user->setIsEnabled(false);
+                $this->entityManager->persist($user);
+                $this->entityManager->flush();
+                $this->flashBag->add("log_err", "Vous avez entré trois fois un mot de passe erroné. Par sécurité, votre compte est désormais désactivé. Veuillez contacter un administrateur pour qu'il vous le réactive.");
+            }
+        }
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
     }
 
     protected function getLoginUrl(Request $request): string
