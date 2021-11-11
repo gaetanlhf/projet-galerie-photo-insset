@@ -5,18 +5,18 @@
 	</div>
 {% endfor %}
 
+{% if error %}
+	<div class="alert alert-danger">
+		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+		{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
 <div class="card">
 	<div class="card-body text-center">
 		<h5 class="card-title">
 			<i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>
 			Connexion</h5>
 		<h6 class="card-subtitle mb-2 text-muted">Pour accéder à votre galerie !</h6>
-
-		{% if error %}
-			<div class="alert alert-danger">
-				<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
-				{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
 
 		<form action="{{ path('app_home') }}" method="post">
 

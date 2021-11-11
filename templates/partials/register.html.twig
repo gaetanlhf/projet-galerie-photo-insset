@@ -5,23 +5,6 @@
 			Inscription</h5>
 		<h6 class="card-subtitle mb-2 text-muted">Simple comme bonjour !</h6>
 
-		{% for errors in app.flashes('register_err') %}
-			<div class="alert alert-danger">
-				<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
-				L'inscription a échoué :
-				{% for error in errors %}
-					{{ error }}<br>
-				{% endfor %}
-			</div>
-		{% endfor %}
-
-		{% for success in app.flashes('register_suc') %}
-			<div class="alert alert-success">
-				<i class="fa fa-check fa-fw" aria-hidden="true"></i>
-				Vous êtes désormais inscrit !<br>Votre mot de passe vous été envoyé par courriel : {{ success }}
-			</div>
-		{% endfor %}
-
 		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
 			<i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>
 			S'inscrire</button>
