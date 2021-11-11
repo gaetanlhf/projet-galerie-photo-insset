@@ -10,14 +10,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mime\Address;
 
 class RegistrationController extends AbstractController
 {
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordHasherInterface $passwordHasher): Response
+    public function register(Request $request, UserPasswordHasherInterface $passwordHasher, MailerInterface $mailer): Response
     {
         $user = new User();
         $registrationForm = $this->createForm(RegistrationFormType::class, $user);
@@ -26,9 +27,10 @@ class RegistrationController extends AbstractController
         if ($registrationForm->isSubmitted() && $registrationForm->isValid()) {
 
             $user = $registrationForm->getData();
+            $password = $this->genPwd();
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
-                $this->genPwd()
+                $password
             );
 
             // encode the plain password
@@ -41,6 +43,18 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
+
+            $email = (new TemplatedEmail())
+                ->from("noreply@gaetan-le-heurt-finot.insset.ovh", "Gallerie photo")
+                ->to(new Address($user['email']))
+                ->subject("Votre mot de passe pour Galerie Photo")
+                ->htmlTemplate("emails/signup.html.twig")
+                ->context([
+                    'username' => $user['username'],
+                    'password' => $password
+                ]);
+
+            $mailer->send($email);
 
             return $this->redirectToRoute('app_home', array('success' => true));
         }
