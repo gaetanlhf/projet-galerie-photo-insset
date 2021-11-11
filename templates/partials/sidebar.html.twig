@@ -3,3 +3,7 @@
 	<br>
 	{{ render(controller('App\\Controller\\RegistrationUIController::registerUI')) }}
 {% endif %}
+
+{% if app.user %}
+	{% include 'partials/userpanel.html.twig' %}
+{% endif %}
