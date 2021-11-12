@@ -37,6 +37,11 @@ class Image
      */
     private $fileLocalisation;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $position;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Image
     public function setfileLocalisation(string $fileLocalisation): self
     {
         $this->fileLocalisation = $fileLocalisation;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }
