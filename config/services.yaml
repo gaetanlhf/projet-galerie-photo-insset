@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+    img_path: '%kernel.project_dir%/public/uploaded/'
+
 
 services:
     # default configuration for services in *this* file
