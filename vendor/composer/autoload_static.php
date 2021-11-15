@@ -37,6 +37,7 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'T' => 
         array (
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
+            'Twig\\Extra\\Intl\\' => 16,
             'Twig\\' => 5,
         ),
         'S' => 
@@ -180,6 +181,10 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'Twig\\Extra\\TwigExtraBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/extra-bundle',
+        ),
+        'Twig\\Extra\\Intl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/intl-extra',
         ),
         'Twig\\' => 
         array (
@@ -594,14 +599,24 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
     );
 
     public static $classMap = array (
+        'App\\Controller\\GalleryController' => __DIR__ . '/../..' . '/src/Controller/GalleryController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
+        'App\\Controller\\RegistrationUIController' => __DIR__ . '/../..' . '/src/Controller/RegistrationUIController.php',
+        'App\\Controller\\UploadController' => __DIR__ . '/../..' . '/src/Controller/UploadController.php',
+        'App\\Entity\\Image' => __DIR__ . '/../..' . '/src/Entity/Image.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\EventListener\\LogoutListener' => __DIR__ . '/../..' . '/src/EventListener/LogoutListener.php',
+        'App\\Form\\EventListener\\ReCaptchaValidationListener' => __DIR__ . '/../..' . '/src/Form/EventListener/ReCaptchaValidationListener.php',
+        'App\\Form\\ImageType' => __DIR__ . '/../..' . '/src/Form/ImageType.php',
+        'App\\Form\\ReCaptchaType' => __DIR__ . '/../..' . '/src/Form/ReCaptchaType.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\ImageRepository' => __DIR__ . '/../..' . '/src/Repository/ImageRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Security\\UserAuthenticator' => __DIR__ . '/../..' . '/src/Security/UserAuthenticator.php',
+        'App\\Security\\UserChecker' => __DIR__ . '/../..' . '/src/Security/UserChecker.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -5973,6 +5988,7 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'Twig\\Extension\\SandboxExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/SandboxExtension.php',
         'Twig\\Extension\\StagingExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StagingExtension.php',
         'Twig\\Extension\\StringLoaderExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StringLoaderExtension.php',
+        'Twig\\Extra\\Intl\\IntlExtension' => __DIR__ . '/..' . '/twig/intl-extra/IntlExtension.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Compiler\\MissingExtensionSuggestorPass' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/Compiler/MissingExtensionSuggestorPass.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/Configuration.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\TwigExtraExtension' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/TwigExtraExtension.php',

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd18152ce3b58f15b2af388c13d96f0641e64141e',
+        'reference' => 'ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd18152ce3b58f15b2af388c13d96f0641e64141e',
+            'reference' => 'ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -1296,6 +1296,15 @@
             'install_path' => __DIR__ . '/../twig/extra-bundle',
             'aliases' => array(),
             'reference' => 'fa92b8301ff8878e45fe9f54ab7ad99872e080f3',
+            'dev_requirement' => false,
+        ),
+        'twig/intl-extra' => array(
+            'pretty_version' => 'v3.3.3',
+            'version' => '3.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twig/intl-extra',
+            'aliases' => array(),
+            'reference' => '5a84d0f6bab386bc4224b4220da1daef8d015577',
             'dev_requirement' => false,
         ),
         'twig/twig' => array(
