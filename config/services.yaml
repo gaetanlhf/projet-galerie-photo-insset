@@ -32,3 +32,10 @@ services:
             - name: 'kernel.event_listener'
               event: 'Symfony\Component\Security\Http\Event\LogoutEvent'
               dispatcher: security.event_dispatcher.main
+
+    App\EventListener\RemoveImageFromFileSystem:
+        tags:
+            - name: 'doctrine.event_listener'
+              event: 'preRemove'
+              priority: 500
+              connection: 'default'
