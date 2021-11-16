@@ -19,6 +19,28 @@ class ImageRepository extends ServiceEntityRepository
         parent::__construct($registry, Image::class);
     }
 
+    public function findAllImage($user)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.user = :val')
+            ->setParameter('val', $user)
+            ->orderBy('i.position', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    public function findImagePublished($user)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.user = :val')
+            ->setParameter('val', $user)
+            ->andWhere('i.position != 0')
+            ->orderBy('i.position', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Image[] Returns an array of Image objects
     //  */
