@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil • Galerie photo
+{% if setTitle is defined %}
+	{% set pageTitle = setTitle %}
+{% else %}
+	{% set pageTitle = 'Accueil' %}
+{% endif %}
+
+{% block title %}
+	{{ pageTitle }}
+	• Galerie photo
 {% endblock %}
 
 {% block body %}
