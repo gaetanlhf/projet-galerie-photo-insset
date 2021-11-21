@@ -29,12 +29,37 @@ class ImageRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+
     public function findImagePublished($user)
     {
         return $this->createQueryBuilder('i')
             ->andWhere('i.user = :val')
             ->setParameter('val', $user)
             ->andWhere('i.position != 0')
+            ->orderBy('i.position', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function countImage($user)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.user = :val')
+            ->setParameter('val', $user)
+            ->select('count(i.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+        ;
+    }
+
+    public function findImageByUserAndPosition($user, $position)
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.user = :user')
+            ->setParameter('user', $user)
+            ->andWhere('i.position != :position')
+            ->setParameter('position', $position)
             ->orderBy('i.position', 'ASC')
             ->getQuery()
             ->getResult()
