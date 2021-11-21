@@ -8,12 +8,14 @@
 		</div>
 	{% endfor %}
 	{% if (img is defined) and (img != null) %}
-		<div class="row justify-content-center">
+		<div class="row justify-content-md-center">
 			{% for image in img %}
-				<div class="col-md-6 col-lg-3">
-					<div class="card border-0">
-						<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery"><img src="/uploaded/{{ image.fileLocalisation }}" class="img-fluid card-img-top scale-on-hover"></a>
-					</div>
+				<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 box-shadow shadow-sm scale-on-hover align-items-center">
+					<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
+						<div class="card d-flex flex-fill align-items-center">
+							<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top">
+						</div>
+					</a>
 				</div>
 			{% endfor %}
 		</div>
@@ -57,11 +59,7 @@
 	{% if (img is defined) and (img != null) %}
 		<div class="d-flex align-items-center row justify-content-center">
 			{% for image in img %}
-
-
-				<div class="col-md-6 col-lg-3">
-
-
+				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 					<div class="mb-3 box-shadow shadow-sm">
 						<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery"><img src="/uploaded/{{ image.fileLocalisation }}" class="img-fluid card-img-top scale-on-hover"></a>
 						<div class="d-flex card-body justify-content-between">
