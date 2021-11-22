@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Image;
 use App\Form\ImageType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -127,11 +128,11 @@ class MyGalleryController extends AbstractController
     {
         $image = $request->query->get('image');
         $user = $this->getUser();
+
         if ($image) {
             $entityManager = $this->getDoctrine()->getManager();
 
             $image = $entityManager->getRepository(Image::class)->findBy(['user' => $user, 'id' => $image]);
-
             if ($image) {
                 $imgPos = $image[0]->getPosition();
                 if ($imgPos != 0) {
