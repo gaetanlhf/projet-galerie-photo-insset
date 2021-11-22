@@ -21,5 +21,9 @@
 {% endif %}
 
 {% if app.user %}
-	{% include 'partials/userpanel.html.twig' %}
+	{% if app.user.roles == ["ROLE_USER"] %}
+		{% include 'partials/usermenu.html.twig' %}
+	{% else %}
+		{% include 'partials/adminmenu.html.twig' %}
+	{% endif %}
 {% endif %}
