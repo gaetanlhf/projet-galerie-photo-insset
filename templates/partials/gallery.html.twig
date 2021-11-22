@@ -10,10 +10,10 @@
 	{% if (img is defined) and (img != null) %}
 		<div class="row justify-content-md-center">
 			{% for image in img %}
-				<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 box-shadow shadow-sm scale-on-hover align-items-center">
+				<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 align-items-center">
 					<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
 						<div class="card d-flex flex-fill align-items-center">
-							<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top">
+							<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top scale-on-hover">
 						</div>
 					</a>
 				</div>
@@ -80,24 +80,21 @@
 										{% for i in 1..countImg %}
 											<a href="/mygallery/changepos?image={{ image.id }}&position={{ i }}" class="dropdown-item btn btn-primary">Publier en position
 												{{ i }}</a>
-
-
 										{% endfor %}
 									</div>
 								</div>
-
 							</div>
 
 							<div class="ms-auto">
-								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ image.id }}">
 									<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
 								</button>
 
-								<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+								<div class="modal fade" id="deleteModal{{ image.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModal{{ image.id }}Label" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h5 class="modal-title" id="deleteModalLabel">
+												<h5 class="modal-title" id="deleteModal{{ image.id }}Label">
 													<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
 													Supprimer une image</h5>
 												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -107,7 +104,6 @@
 													Êtes-vous sûr de vouloir supprimer cette image ?
 												</div>
 											</div>
-
 											<div class="modal-footer">
 												<a href="/mygallery/delete?image={{ image.id }}" class="btn btn-primary">
 													<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
@@ -138,8 +134,26 @@
 {% endif %}
 {% if app.request.attributes.get('_route') == "app_home" %}
 	<h1>Bienvenue sur Galerie photo INSSET</h1>
-	<div class="alert alert-info">
-		<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
-		Vous observez actuellement la galerie photo de todo
-	</div>
+	{% if (randomUser != null) %}
+			<div class="alert alert-info">
+				<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
+				La galerie photo de	<a href="/u/{{ randomUser.username }}"><span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span></a> a été sélectionnée aléatoirement pour vos petits yeux.
+			</div>
+			<div class="row justify-content-md-center">
+		{% for image in randomUser.images %}
+				<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 align-items-center">
+					<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
+						<div class="card d-flex flex-fill align-items-center">
+							<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top scale-on-hover">
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<div class="alert alert-info">
+			<i class="fa fa-frown-o fa-fw" aria-hidden="true"></i>
+			Aucun compte utilisateur n'a de photos publiques sur cette instance...
+		</div>
+	{% endif %}
 {% endif %}
