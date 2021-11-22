@@ -31,4 +31,19 @@ class GalleryController extends AbstractController
         }
         return $this->render('home/index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'img' => $img]);
     }
+
+    public function userList()
+    {
+        $users = $this->getDoctrine()->getRepository(User::class)->findAllUserWithPublishedImages();
+        if ($users != null) {
+            $usersData = array();
+            foreach ($users as $user) {
+                array_push($usersData, $this->getDoctrine()->getRepository(User::class)->find($user));
+            }
+        } else {
+            $usersData = null;
+        }
+
+        return $this->render('partials/gallerybar.html.twig', ['users' => $usersData]);
+    }
 }
