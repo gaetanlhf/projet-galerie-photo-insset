@@ -4,7 +4,15 @@
 			<i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>
 			Utilisateurs</h5>
 		<h6 class="card-subtitle mb-2 text-muted">Pour jeter un coup d'oeil sur leur galerie !</h6>
-
-		
+		{% if users != null %}
+			{% for user in users %}
+			<a href="/u/{{ user.username }}"><span class="badge rounded-pill bg-primary">{{ user.username }}</span></a>
+			{% endfor %}
+		{% else %}
+			<div class="alert alert-info">
+				<i class="fa fa-frown-o fa-fw" aria-hidden="true"></i>
+				Aucun compte utilisateur n'a de photos publiques sur cette instance...
+			</div>
+		{% endif %}
 	</div>
 </div>
