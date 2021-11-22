@@ -32,12 +32,18 @@ class RegistrationController extends AbstractController
             );
 
             $user->setPassword($hashedPassword);
-            $user->setRoles(["ROLE_USER"]);
             $user->setIsEnabled(true);
             $user->setNbLoginFailed("0");
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
+            $entityManager->flush();
+
+            if ($user->getId() == 1) {
+                $user->setRoles(["ROLE_ADMIN"]);
+            } else {
+                $user->setRoles(["ROLE_USER"]);
+            }
             $entityManager->flush();
 
             $email = (new TemplatedEmail())
@@ -51,8 +57,12 @@ class RegistrationController extends AbstractController
                 ]);
 
             // $mailer->send($email);
-
-            $this->addFlash('register_suc', $password);
+            
+            if ($user->getRoles() == ["ROLE_ADMIN"]) {
+                $this->addFlash('register_suc', "Étant le premier utilisateur de cette instance, vous êtes désormais l'administrateur. Votre mot de passe vous été envoyé par courriel : " . $password);
+            } else {
+                $this->addFlash('register_suc', "Vous êtes désormais inscrit ! Votre mot de passe vous été envoyé par courriel : " . $password);
+            }
 
             return $this->redirectToRoute('app_home');
         }
