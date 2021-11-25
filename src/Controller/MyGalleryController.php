@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Entity\Image;
 use App\Form\ImageType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -57,11 +56,17 @@ class MyGalleryController extends AbstractController
 
             $this->addFlash('gallery_suc', 'Image ajoutée avec succès.');
 
-            return $this->redirect($this->generateUrl('app_mygallery'));
         } else {
-            $this->addFlash('gallery_err', 'Une erreur est survenue lors du téléversement de l\'image.');
-            return $this->redirectToRoute('app_mygallery');
+
+            $form_errors = array();
+
+            foreach ($uploadForm->getErrors(true) as $error) {
+                $form_errors[] = $error->getMessage();
+            }
+
+            $this->addFlash('gallery_upload_err', $form_errors);
         }
+        return $this->redirect($this->generateUrl('app_mygallery'));
     }
 
     #[Route('/mygallery/changepos', name: 'app_mygallery_changepos')]
