@@ -1,0 +1,106 @@
+<h1>Gestion des utilisateurs</h1>
+{% for message in app.flashes('admin_err') %}
+	<div class="alert alert-danger">
+		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+		{{ message }}<br>
+	</div>
+{% endfor %}
+{% for message in app.flashes('admin_suc') %}
+	<div class="alert alert-success">
+		<i class="fa fa-check fa-fw" aria-hidden="true"></i>
+		{{ message }}<br>
+	</div>
+{% endfor %}
+{% if users == null %}
+	<div class="alert alert-info">
+		<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
+		Il n'y a aucun utilisateur sur cette instance...
+	</div>
+{% else %}
+	<table class="table table-striped align-middle text-center">
+		<thead>
+			<tr>
+				<th scope="col">Pseudo</th>
+				<th scope="col">Adresse de courriel</th>
+				<th scope="col">Âge</th>
+				<th scope="col">Connexions échouées</th>
+				<th scope="col">Activé ?</th>
+				<th scope="col">Surpression</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<th scope="row">{{ user.username }}</th>
+					<td>{{ user.email }}</td>
+					<td>{{ user.age }}</td>
+					<td>{{ user.nbLoginFailed }}</td>
+					{% if user.isEnabled %}
+						<td>Oui</td>
+					{% else %}
+						<td>
+							Non<br>
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reactivateModal{{ user.id }}">
+								Réactivivation ?
+							</button>
+
+						</td>
+					{% endif %}
+					<td>
+
+						<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ user.id }}">
+							<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+						</button>
+					</td>
+				</tr>
+				<div class="modal fade" id="reactivateModal{{ user.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="reactivateModal{{ user.id }}Label" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="reactivateModal{{ user.id }}Label">
+									<i class="fa fa-shield fa-fw" aria-hidden="true"></i>
+									Réactiver le compte de
+									{{ user.username }}</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="mb-3">
+									Êtes-vous sûr de vouloir réactiver cet utilisateur ?<br>
+									Il va recevoir un nouveau mot de passe par courriel.
+								</div>
+							</div>
+							<div class="modal-footer">
+								<a href="/admin/reactivate?user={{ user.id }}" class="btn btn-primary">
+									<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
+									Go !</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="deleteModal{{ user.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModal{{ user.id }}Label" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="deleteModal{{ user.id }}Label">
+									<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+									Supprimer le compte de
+									{{ user.username }}</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="mb-3">
+									Êtes-vous sûr de vouloir supprimer cet utilisateur ?
+								</div>
+							</div>
+							<div class="modal-footer">
+								<a href="/admin/delete?user={{ user.id }}" class="btn btn-primary">
+									<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
+									Go !</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}

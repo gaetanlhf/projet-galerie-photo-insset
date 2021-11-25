@@ -1,0 +1,12 @@
+{% if app.request.attributes.get('_route') == "app_usergallery" %}
+	{% include 'partials/publicgallery.html.twig' %}
+{% endif %}
+{% if app.request.attributes.get('_route') == "app_mygallery" %}
+	{% include 'partials/mygallery.html.twig' %}
+{% endif %}
+{% if app.request.attributes.get('_route') == "app_home" %}
+	{% include 'partials/home.html.twig' %}
+{% endif %}
+{% if app.request.attributes.get('_route') == "app_admin" %}
+	{% include 'partials/admin.html.twig' %}
+{% endif %}

@@ -1,0 +1,21 @@
+<h1>Galerie photo de
+	{{ username }}</h1><br>
+{% for message in app.flashes('gallery_err') %}
+	<div class="alert alert-danger">
+		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+		{{ message }}<br>
+	</div>
+{% endfor %}
+{% if (img is defined) and (img != null) %}
+	<div class="row justify-content-md-center">
+		{% for image in img %}
+			<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 align-items-center">
+				<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
+					<div class="card d-flex flex-fill align-items-center">
+						<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top scale-on-hover">
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}
