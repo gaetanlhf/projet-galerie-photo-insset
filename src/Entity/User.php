@@ -231,4 +231,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function genPwd(): String
+    {
+        $length = "8";
+        $character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $string = "";
+        $max = mb_strlen($character, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $string .= $character[random_int(0, $max)];
+        }
+        return $string;
+    }
 }
