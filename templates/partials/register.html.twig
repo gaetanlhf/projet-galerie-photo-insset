@@ -22,7 +22,12 @@
 			</div>
 			{{ form_start(registrationForm, {'action': path('app_register'), 'method': 'POST'}) }}
 			<div class="modal-body">
-
+				{% if users == null %}
+					<div class="alert alert-info">
+						<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
+						Cette instance est vide.<br>Le premier utilisateur sera l'administrateur.<br>Il est capable de gérer les comptes, mais n'est pas capable de publier des photos.
+					</div>
+				{% endif %}
 				<div class="mb-3">
 					{{ form_label(registrationForm.username, "Pseudo") }}
 					{{ form_widget(registrationForm.username) }}

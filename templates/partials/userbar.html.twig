@@ -12,7 +12,6 @@
 	{% for success in app.flashes('register_suc') %}
 		<div class="alert alert-success">
 			<i class="fa fa-check fa-fw" aria-hidden="true"></i>
-			Vous êtes désormais inscrit !<br>Votre mot de passe vous été envoyé par courriel :
 			{{ success }}
 		</div>
 	{% endfor %}
@@ -22,5 +21,9 @@
 {% endif %}
 
 {% if app.user %}
-	{% include 'partials/userpanel.html.twig' %}
+	{% if app.user.roles == ["ROLE_USER"] %}
+		{% include 'partials/usermenu.html.twig' %}
+	{% else %}
+		{% include 'partials/adminmenu.html.twig' %}
+	{% endif %}
 {% endif %}
