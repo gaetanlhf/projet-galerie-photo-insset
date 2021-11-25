@@ -1,0 +1,19 @@
+{# templates/emails/signup.html.twig #}
+
+<h1>Bonjour {{ username }} !</h1>
+
+<p>
+    Votre compte a été réactivé par l'administrateur.
+</p>
+<p>
+    Votre nouveau mot de passe est :
+</p>
+<p><code>{{ password }}</code></p>
+<p>
+    Pour rappel, vous vous êtes inscrit sur Galerie photo INSSET avec l'adresse de courriel suivante :
+</p>
+<p><code>{{ email.to[0].address }}</code></p>
+
+<p>
+    <a href="http://gaetan-le-heurt-finot.insset.ovh">Cliquez-ici pour vous rendre sur Galerie photo INSSET</a>
+</p>
