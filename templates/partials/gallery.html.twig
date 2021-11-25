@@ -138,10 +138,7 @@
 		<div class="alert alert-info">
 			<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
 			La galerie photo de
-			<a href="/u/{{ randomUser.username }}">
-				<span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span>
-			</a>
-			a été sélectionnée aléatoirement pour vos petits yeux.
+			<a href="/u/{{ randomUser.username }}"><span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span></a> a été sélectionnée aléatoirement pour vos petits yeux.
 		</div>
 		<div class="row justify-content-md-center">
 			{% for image in randomUser.images %}
