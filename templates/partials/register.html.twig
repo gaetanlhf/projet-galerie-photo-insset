@@ -29,22 +29,18 @@
 					</div>
 				{% endif %}
 				<div class="mb-3">
-					{{ form_label(registrationForm.username, "Pseudo") }}
 					{{ form_widget(registrationForm.username) }}
 				</div>
 
 				<div class="mb-3">
-					{{ form_label(registrationForm.email, "Adresse de courriel") }}
 					{{ form_widget(registrationForm.email) }}
 				</div>
 
 				<div class="mb-3">
-					{{ form_label(registrationForm.age, "Âge") }}
 					{{ form_widget(registrationForm.age) }}
 				</div>
 
 				<div class="mb-3">
-					{{ form_label(registrationForm.captcha, "Captcha") }}
 					{{ form_row(registrationForm.captcha) }}
 				</div>
 
