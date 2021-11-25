@@ -20,6 +20,14 @@
 		{{ message }}<br>
 	</div>
 {% endfor %}
+{% for messages in app.flashes('gallery_upload_err') %}
+	<div class="alert alert-danger">
+		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+		{% for message in messages %}
+				{{ message }}<br>
+			{% endfor %}
+	</div>
+{% endfor %}
 {% for message in app.flashes('gallery_suc') %}
 	<div class="alert alert-success">
 		<i class="fa fa-check fa-fw" aria-hidden="true"></i>
@@ -61,7 +69,7 @@
 							<div class="dropdown">
 								<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 									{% if image.position == 0 %}
-										Non publiée
+										Ø
 									{% else %}
 										{{ image.position }}
 									{% endif %}
