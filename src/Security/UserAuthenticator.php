@@ -84,13 +84,12 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
                 if (3 - $nbError != 1) {
-                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essais");
+                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essais avant que votre compte soit désactivé par sécurité.");
                 } else {
-                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essai");
+                    $this->flashBag->add("log_err", "Votre mot de passe est incorrect, il vous reste " . 3 - $nbError . " essai avant que votre compte soit désactivé par sécurité.");
                 }
             } else if ($nbError = 2 && $isEnabled == true) {
-                $nbError = $nbError + 1;
-                $user->setNbLoginFailed($nbError);
+                $user->setNbLoginFailed("3");
                 $user->setIsEnabled(false);
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
