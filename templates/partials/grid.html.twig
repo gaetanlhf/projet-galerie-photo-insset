@@ -1,12 +1,12 @@
 <main class="container flex-shrink-0">
 	<div class="row">
-		<div class="col">
-			{{ render(controller('App\\Controller\\GalleryController::userList')) }}
-		</div>
-		<div class="col-7">
+		<div class="col-lg-7 order-xs-1 order-lg-2">
 			{% include 'partials/main.html.twig' %}
 		</div>
-		<div class="col">
+		<div class="col order-xs-3 order-lg-1">
+			{{ render(controller('App\\Controller\\GalleryController::userList')) }}
+		</div>
+		<div class="col order-xs-2 order-lg-3">
 			{% include 'partials/userbar.html.twig' %}
 		</div>
 	</div>
