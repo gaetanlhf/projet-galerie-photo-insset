@@ -59,9 +59,9 @@ class RegistrationController extends AbstractController
             $mailer->send($email);
             
             if ($user->getRoles() == ["ROLE_ADMIN"]) {
-                $this->addFlash('register_suc', "Étant le premier utilisateur de cette instance, vous êtes désormais l'administrateur. Votre mot de passe vous été envoyé par courriel : " . $password);
+                $this->addFlash('register_suc', "Étant le premier utilisateur de cette instance, vous êtes désormais l'administrateur. Votre mot de passe vous été envoyé par courriel.");
             } else {
-                $this->addFlash('register_suc', "Vous êtes désormais inscrit ! Votre mot de passe vous été envoyé par courriel : " . $password);
+                $this->addFlash('register_suc', "Vous êtes désormais inscrit ! Votre mot de passe vous été envoyé par courriel.");
             }
 
             return $this->redirectToRoute('app_home');
