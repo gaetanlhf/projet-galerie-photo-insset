@@ -33,6 +33,7 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
+  'babdev/pagerfanta-bundle' => 'v3.5.0@b8b947de962fa6c11fd9087c1c018b1291732953',
   'composer/package-versions-deprecated' => '1.11.99.4@b174585d1fe49ceed21928a945138948cb394600',
   'doctrine/annotations' => '1.13.2@5b668aef16090008790395c02c893b1ba13f7e08',
   'doctrine/cache' => '2.1.1@331b4d5dbaeab3827976273e9356b3b453c300ce',
@@ -55,6 +56,7 @@ final class Versions
   'google/recaptcha' => '1.2.4@614f25a9038be4f3f2da7cbfd778dc5b357d2419',
   'laminas/laminas-code' => '4.4.3@bb324850d09dd437b6acb142c13e64fdc725b0e1',
   'monolog/monolog' => '2.3.5@fd4380d6fc37626e2f799f29d91195040137eba9',
+  'pagerfanta/core' => 'v3.4.0@b3479aa4a3ed1761df181cdba7c9a8f6a11e122e',
   'phpdocumentor/reflection-common' => '2.2.0@1d01c49d4ed62f25aa84a747ad35d5a16924662b',
   'phpdocumentor/reflection-docblock' => '5.3.0@622548b623e81ca6d78b721c5e029f4ce664f170',
   'phpdocumentor/type-resolver' => '1.5.1@a12f7e301eb7258bb68acd89d4aefa05c2906cae',
@@ -165,10 +167,10 @@ final class Versions
   'symfony/phpunit-bridge' => 'v5.3.10@325aaf6302501ed3673cffbd3ba88db5949de8ae',
   'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'symfony/polyfill-ctype' => '*@ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
-  'symfony/polyfill-iconv' => '*@ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
-  'symfony/polyfill-php72' => '*@ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
-  '__root__' => 'dev-main@ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
+  'symfony/polyfill-ctype' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+  'symfony/polyfill-iconv' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+  'symfony/polyfill-php72' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+  '__root__' => 'dev-main@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
 );
 
     private function __construct()
