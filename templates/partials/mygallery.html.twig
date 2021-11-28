@@ -24,8 +24,8 @@
 	<div class="alert alert-danger">
 		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
 		{% for message in messages %}
-				{{ message }}<br>
-			{% endfor %}
+			{{ message }}<br>
+		{% endfor %}
 	</div>
 {% endfor %}
 {% for message in app.flashes('gallery_suc') %}
@@ -47,6 +47,10 @@
 			<div class="modal-body">
 				<div class="mb-3">
 					{{ form_row(uploadForm.image) }}
+				</div>
+				<div class="mb-3 text-muted">
+					Type de fichier : jpg, jpeg, png<br>
+					Taille maximale : 5 Mo
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -115,13 +119,15 @@
 						</div>
 					</div>
 					<div class="d-flex card-footer text-muted justify-content-center text-center">
-						Date d'ajout :
-						{{ image.date|format_datetime('short', 'none', locale='fr') }}<br>
-						Heure d'ajout :
-						{{ image.date|format_datetime('none', 'short', locale='fr') }}<br>
-						Taille :
-						{{ image.size }}
-						octets<br>
+						<small>
+							Date d'ajout :
+							{{ image.date|format_datetime('short', 'none', locale='fr') }}<br>
+							Heure d'ajout :
+							{{ image.date|format_datetime('none', 'short', locale='fr') }}<br>
+							Taille :
+							{{ image.size }}
+							octets<br>
+						</small>
 					</div>
 				</div>
 			</div>
