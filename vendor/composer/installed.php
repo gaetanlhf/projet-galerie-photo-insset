@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
+        'reference' => '0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,16 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ec64d98afc8e2155d77eb7ac59424aa1c7be9fc9',
+            'reference' => '0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+            'dev_requirement' => false,
+        ),
+        'babdev/pagerfanta-bundle' => array(
+            'pretty_version' => 'v3.5.0',
+            'version' => '3.5.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../babdev/pagerfanta-bundle',
+            'aliases' => array(),
+            'reference' => 'b8b947de962fa6c11fd9087c1c018b1291732953',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -249,6 +258,15 @@
             'replaced' => array(
                 0 => '^2.1',
             ),
+        ),
+        'pagerfanta/core' => array(
+            'pretty_version' => 'v3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pagerfanta/core',
+            'aliases' => array(),
+            'reference' => 'b3479aa4a3ed1761df181cdba7c9a8f6a11e122e',
+            'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.3',
