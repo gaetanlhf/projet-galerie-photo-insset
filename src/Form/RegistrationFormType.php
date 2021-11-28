@@ -23,10 +23,17 @@ class RegistrationFormType extends AbstractType
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Veuillez entrer un nom d\'utilisateur.',
+                    ]),
+                    new Regex([
+                        'pattern' => '/^[a-zA-Z0-9]{4,19}$/',
+                        'message' => 'Le pseudo doit être uniquement consitué de caractères alphanumériques et être compris entre 5 et 20 caractères.'
                     ])
                 ],
                 'attr' => [
-                    'placeholder' => 'Pseudo'
+                    'placeholder' => 'Pseudo',
+                    'minlength' => '5',
+                    'maxlength' => '20',
+                    'pattern' => '[a-zA-Z0-9]+'
                 ]
             ])
             ->add('email', EmailType::class, [
@@ -56,7 +63,9 @@ class RegistrationFormType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'placeholder' => 'Âge'
+                    'placeholder' => 'Âge',
+                    'min' => '0',
+                    'oninput' => 'this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null'
                 ]
             ])
             ->add('captcha', ReCaptchaType::class, [
