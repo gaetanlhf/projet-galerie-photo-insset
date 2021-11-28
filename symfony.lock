@@ -121,6 +121,9 @@
     "pagerfanta/doctrine-orm-adapter": {
         "version": "v3.4.0"
     },
+    "pagerfanta/twig": {
+        "version": "v3.4.0"
+    },
     "phar-io/manifest": {
         "version": "2.0.3"
     },

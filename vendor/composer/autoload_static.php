@@ -127,6 +127,7 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
             'ProxyManager\\' => 13,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'Pagerfanta\\Twig\\' => 16,
             'Pagerfanta\\Doctrine\\ORM\\' => 24,
             'Pagerfanta\\' => 11,
             'PackageVersions\\' => 16,
@@ -511,6 +512,10 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Pagerfanta\\Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/twig',
         ),
         'Pagerfanta\\Doctrine\\ORM\\' => 
         array (
@@ -2389,6 +2394,9 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'Pagerfanta\\RouteGenerator\\RouteGeneratorDecorator' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorDecorator.php',
         'Pagerfanta\\RouteGenerator\\RouteGeneratorFactoryInterface' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorFactoryInterface.php',
         'Pagerfanta\\RouteGenerator\\RouteGeneratorInterface' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorInterface.php',
+        'Pagerfanta\\Twig\\Extension\\PagerfantaExtension' => __DIR__ . '/..' . '/pagerfanta/twig/Extension/PagerfantaExtension.php',
+        'Pagerfanta\\Twig\\Extension\\PagerfantaRuntime' => __DIR__ . '/..' . '/pagerfanta/twig/Extension/PagerfantaRuntime.php',
+        'Pagerfanta\\Twig\\View\\TwigView' => __DIR__ . '/..' . '/pagerfanta/twig/View/TwigView.php',
         'Pagerfanta\\View\\DefaultView' => __DIR__ . '/..' . '/pagerfanta/core/View/DefaultView.php',
         'Pagerfanta\\View\\Foundation6View' => __DIR__ . '/..' . '/pagerfanta/core/View/Foundation6View.php',
         'Pagerfanta\\View\\OptionableView' => __DIR__ . '/..' . '/pagerfanta/core/View/OptionableView.php',
