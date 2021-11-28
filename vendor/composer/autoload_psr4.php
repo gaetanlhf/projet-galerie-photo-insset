@@ -90,6 +90,7 @@ return array(
     'ProxyManager\\' => array($vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'Pagerfanta\\Twig\\' => array($vendorDir . '/pagerfanta/twig'),
     'Pagerfanta\\Doctrine\\ORM\\' => array($vendorDir . '/pagerfanta/doctrine-orm-adapter'),
     'Pagerfanta\\' => array($vendorDir . '/pagerfanta/core'),
     'PackageVersions\\' => array($vendorDir . '/composer/package-versions-deprecated/src/PackageVersions'),
