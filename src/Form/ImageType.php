@@ -26,7 +26,7 @@ class ImageType extends AbstractType
                             'image/jpg',
                             'image/png',
                         ],
-                        'mimeTypesMessage' => 'Image invalide.',
+                        'mimeTypesMessage' => 'Le fichier que vous avez téléversé est invalide. L\'image doit être de format jpeg, jpg ou png et doit avoir une taille maximale de 5 Mo.'
                     ])
                 ],
             ]);
