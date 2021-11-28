@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdc2b2f043b139d59a9db69096ce2013",
+    "content-hash": "8ca141d6771796b17e0395ba5409aa36",
     "packages": [
         {
             "name": "babdev/pagerfanta-bundle",
@@ -1937,6 +1937,57 @@
                 "source": "https://github.com/Pagerfanta/core/tree/v3.4.0"
             },
             "time": "2021-11-03T23:45:21+00:00"
+        },
+        {
+            "name": "pagerfanta/doctrine-orm-adapter",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pagerfanta/doctrine-orm-adapter.git",
+                "reference": "3d696e59cd601f0f795bf6b0b565b69b15c7e1d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pagerfanta/doctrine-orm-adapter/zipball/3d696e59cd601f0f795bf6b0b565b69b15c7e1d6",
+                "reference": "3d696e59cd601f0f795bf6b0b565b69b15c7e1d6",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.8",
+                "pagerfanta/core": "^3.0",
+                "php": "^7.4 || ^8.0",
+                "symfony/deprecation-contracts": "^2.1"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.11.1",
+                "doctrine/cache": "^1.11 || ^2.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/cache": "^4.4 || ^5.2 || ^6.0",
+                "symfony/phpunit-bridge": "^5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pagerfanta\\Doctrine\\ORM\\": "./"
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Pagerfanta adapter for Doctrine ORM",
+            "keywords": [
+                "doctrine",
+                "orm",
+                "pagerfanta"
+            ],
+            "support": {
+                "source": "https://github.com/Pagerfanta/doctrine-orm-adapter/tree/v3.4.0"
+            },
+            "time": "2021-10-03T17:13:32+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

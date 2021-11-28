@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+        'reference' => 'd76735219fbfa19f0b0fa1b70ee7235a55e364f4',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+            'reference' => 'd76735219fbfa19f0b0fa1b70ee7235a55e364f4',
             'dev_requirement' => false,
         ),
         'babdev/pagerfanta-bundle' => array(
@@ -266,6 +266,15 @@
             'install_path' => __DIR__ . '/../pagerfanta/core',
             'aliases' => array(),
             'reference' => 'b3479aa4a3ed1761df181cdba7c9a8f6a11e122e',
+            'dev_requirement' => false,
+        ),
+        'pagerfanta/doctrine-orm-adapter' => array(
+            'pretty_version' => 'v3.4.0',
+            'version' => '3.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pagerfanta/doctrine-orm-adapter',
+            'aliases' => array(),
+            'reference' => '3d696e59cd601f0f795bf6b0b565b69b15c7e1d6',
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
