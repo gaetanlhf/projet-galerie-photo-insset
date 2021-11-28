@@ -1761,6 +1761,7 @@ return array(
     'Pagerfanta\\Adapter\\ConcatenationAdapter' => $vendorDir . '/pagerfanta/core/Adapter/ConcatenationAdapter.php',
     'Pagerfanta\\Adapter\\FixedAdapter' => $vendorDir . '/pagerfanta/core/Adapter/FixedAdapter.php',
     'Pagerfanta\\Adapter\\NullAdapter' => $vendorDir . '/pagerfanta/core/Adapter/NullAdapter.php',
+    'Pagerfanta\\Doctrine\\ORM\\QueryAdapter' => $vendorDir . '/pagerfanta/doctrine-orm-adapter/QueryAdapter.php',
     'Pagerfanta\\Exception\\InvalidArgumentException' => $vendorDir . '/pagerfanta/core/Exception/InvalidArgumentException.php',
     'Pagerfanta\\Exception\\LessThan1CurrentPageException' => $vendorDir . '/pagerfanta/core/Exception/LessThan1CurrentPageException.php',
     'Pagerfanta\\Exception\\LessThan1MaxPagesException' => $vendorDir . '/pagerfanta/core/Exception/LessThan1MaxPagesException.php',

@@ -127,6 +127,7 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
             'ProxyManager\\' => 13,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'Pagerfanta\\Doctrine\\ORM\\' => 24,
             'Pagerfanta\\' => 11,
             'PackageVersions\\' => 16,
         ),
@@ -510,6 +511,10 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Pagerfanta\\Doctrine\\ORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/doctrine-orm-adapter',
         ),
         'Pagerfanta\\' => 
         array (
@@ -2367,6 +2372,7 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'Pagerfanta\\Adapter\\ConcatenationAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/ConcatenationAdapter.php',
         'Pagerfanta\\Adapter\\FixedAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/FixedAdapter.php',
         'Pagerfanta\\Adapter\\NullAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/NullAdapter.php',
+        'Pagerfanta\\Doctrine\\ORM\\QueryAdapter' => __DIR__ . '/..' . '/pagerfanta/doctrine-orm-adapter/QueryAdapter.php',
         'Pagerfanta\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/InvalidArgumentException.php',
         'Pagerfanta\\Exception\\LessThan1CurrentPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LessThan1CurrentPageException.php',
         'Pagerfanta\\Exception\\LessThan1MaxPagesException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LessThan1MaxPagesException.php',

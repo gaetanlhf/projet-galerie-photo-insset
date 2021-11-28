@@ -57,6 +57,7 @@ final class Versions
   'laminas/laminas-code' => '4.4.3@bb324850d09dd437b6acb142c13e64fdc725b0e1',
   'monolog/monolog' => '2.3.5@fd4380d6fc37626e2f799f29d91195040137eba9',
   'pagerfanta/core' => 'v3.4.0@b3479aa4a3ed1761df181cdba7c9a8f6a11e122e',
+  'pagerfanta/doctrine-orm-adapter' => 'v3.4.0@3d696e59cd601f0f795bf6b0b565b69b15c7e1d6',
   'phpdocumentor/reflection-common' => '2.2.0@1d01c49d4ed62f25aa84a747ad35d5a16924662b',
   'phpdocumentor/reflection-docblock' => '5.3.0@622548b623e81ca6d78b721c5e029f4ce664f170',
   'phpdocumentor/type-resolver' => '1.5.1@a12f7e301eb7258bb68acd89d4aefa05c2906cae',
@@ -167,10 +168,10 @@ final class Versions
   'symfony/phpunit-bridge' => 'v5.3.10@325aaf6302501ed3673cffbd3ba88db5949de8ae',
   'symfony/web-profiler-bundle' => 'v5.3.8@9ba1e05fdc7a46979047ba6c8949bd35e3a386a5',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'symfony/polyfill-ctype' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
-  'symfony/polyfill-iconv' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
-  'symfony/polyfill-php72' => '*@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
-  '__root__' => 'dev-main@0ea82e03cf9a39156bd2436f37cb17a7b11d03f3',
+  'symfony/polyfill-ctype' => '*@d76735219fbfa19f0b0fa1b70ee7235a55e364f4',
+  'symfony/polyfill-iconv' => '*@d76735219fbfa19f0b0fa1b70ee7235a55e364f4',
+  'symfony/polyfill-php72' => '*@d76735219fbfa19f0b0fa1b70ee7235a55e364f4',
+  '__root__' => 'dev-main@d76735219fbfa19f0b0fa1b70ee7235a55e364f4',
 );
 
     private function __construct()
