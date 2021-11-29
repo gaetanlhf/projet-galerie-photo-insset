@@ -3,9 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Image;
-use App\Form\ImageType;
 use App\Entity\User;
-use App\Form\DeleteImageType;
 use Pagerfanta\Doctrine\ORM\QueryAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
