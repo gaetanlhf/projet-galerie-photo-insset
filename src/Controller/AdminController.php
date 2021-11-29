@@ -8,19 +8,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mime\Address;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 
 class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'app_admin')]
-    public function admin(): Response
+    public function admin(Request $request): Response
     {
+        $page = $request->query->get('page', 1);
+
         $users = $this->getDoctrine()->getRepository(User::class)->findAllUsers();
+
+        $pager = new Pagerfanta(new QueryAdapter($users));
+        $pager->setMaxPerPage(12);
+        $pager->setCurrentPage($page);
         return $this->render('home/index.html.twig', [
-            'users' => $users,
+            'users' => $pager,
         ]);
     }
 
