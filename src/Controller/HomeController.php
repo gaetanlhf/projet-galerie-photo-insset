@@ -17,6 +17,7 @@ class HomeController extends AbstractController
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAllUserWithPublishedImages();
         $randomUser = null;
+        $pager = null;
         if ($users != null) {
             $randomUser = $this->getDoctrine()->getRepository(User::class)->find($users[mt_rand(0, count($users) - 1)]);
             $randomUserImg = $this->getDoctrine()->getRepository(Image::class)->findImagePublished($randomUser);
