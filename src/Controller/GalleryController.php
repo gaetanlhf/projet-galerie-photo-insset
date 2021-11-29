@@ -6,6 +6,8 @@ use App\Entity\Image;
 use App\Form\ImageType;
 use App\Entity\User;
 use App\Form\DeleteImageType;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+use Pagerfanta\Pagerfanta;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,11 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class GalleryController extends AbstractController
 {
     #[Route('/u/{username}', name: 'app_usergallery')]
-    public function userGallery(string $username): Response
+    public function userGallery(Request $request, string $username): Response
     {
+        $page = $request->query->get('page', 1);
         $entityManager = $this->getDoctrine()->getManager();
         $user = $entityManager->getRepository(User::class)->findOneBy(['username' => $username]);
         $img = null;
+        $pager = null;
         if (!$user) {
             $setTitle = 'Galerie photo introuvable';
             $this->addFlash('gallery_err', 'La galerie photo de l\'utilisateur ' . $username . ' n\'a pas été trouvé.');
@@ -27,9 +31,13 @@ class GalleryController extends AbstractController
             $img = $this->getDoctrine()->getRepository(Image::class)->findImagePublished($user);
             if (!$img) {
                 $this->addFlash('gallery_err', 'La galerie photo de l\'utilisateur ' . $username . ' est vide.');
+            } else {
+                $pager = new Pagerfanta(new QueryAdapter($img));
+                $pager->setMaxPerPage(12);
+                $pager->setCurrentPage($page);
             }
         }
-        return $this->render('home/index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'img' => $img]);
+        return $this->render('home/index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'images' => $pager]);
     }
 
     public function userList()
