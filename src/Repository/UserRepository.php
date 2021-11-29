@@ -53,8 +53,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->select('u')
             ->andWhere('u.roles != :role')
             ->setParameter('role', '["ROLE_ADMIN"]')
-            ->getQuery()
-            ->getResult()
         ;
     }
 
