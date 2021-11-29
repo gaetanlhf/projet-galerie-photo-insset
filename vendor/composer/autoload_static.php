@@ -127,6 +127,9 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
             'ProxyManager\\' => 13,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'Pagerfanta\\Twig\\' => 16,
+            'Pagerfanta\\Doctrine\\ORM\\' => 24,
+            'Pagerfanta\\' => 11,
             'PackageVersions\\' => 16,
         ),
         'M' => 
@@ -159,6 +162,10 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
             'DeepCopy\\' => 9,
+        ),
+        'B' => 
+        array (
+            'BabDev\\PagerfantaBundle\\' => 24,
         ),
         'A' => 
         array (
@@ -506,6 +513,18 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'Pagerfanta\\Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/twig',
+        ),
+        'Pagerfanta\\Doctrine\\ORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/doctrine-orm-adapter',
+        ),
+        'Pagerfanta\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pagerfanta/core',
+        ),
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
@@ -588,6 +607,10 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'BabDev\\PagerfantaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src',
+        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -599,15 +622,17 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
     );
 
     public static $classMap = array (
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/src/Controller/AdminController.php',
         'App\\Controller\\GalleryController' => __DIR__ . '/../..' . '/src/Controller/GalleryController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\LoginController' => __DIR__ . '/../..' . '/src/Controller/LoginController.php',
+        'App\\Controller\\MyGalleryController' => __DIR__ . '/../..' . '/src/Controller/MyGalleryController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\RegistrationUIController' => __DIR__ . '/../..' . '/src/Controller/RegistrationUIController.php',
-        'App\\Controller\\UploadController' => __DIR__ . '/../..' . '/src/Controller/UploadController.php',
         'App\\Entity\\Image' => __DIR__ . '/../..' . '/src/Entity/Image.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\EventListener\\LogoutListener' => __DIR__ . '/../..' . '/src/EventListener/LogoutListener.php',
+        'App\\EventListener\\RemoveImageFromFileSystem' => __DIR__ . '/../..' . '/src/EventListener/RemoveImageFromFileSystem.php',
         'App\\Form\\EventListener\\ReCaptchaValidationListener' => __DIR__ . '/../..' . '/src/Form/EventListener/ReCaptchaValidationListener.php',
         'App\\Form\\ImageType' => __DIR__ . '/../..' . '/src/Form/ImageType.php',
         'App\\Form\\ReCaptchaType' => __DIR__ . '/../..' . '/src/Form/ReCaptchaType.php',
@@ -618,6 +643,18 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'App\\Security\\UserAuthenticator' => __DIR__ . '/../..' . '/src/Security/UserAuthenticator.php',
         'App\\Security\\UserChecker' => __DIR__ . '/../..' . '/src/Security/UserChecker.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'BabDev\\PagerfantaBundle\\BabDevPagerfantaBundle' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/BabDevPagerfantaBundle.php',
+        'BabDev\\PagerfantaBundle\\DependencyInjection\\BabDevPagerfantaExtension' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/DependencyInjection/BabDevPagerfantaExtension.php',
+        'BabDev\\PagerfantaBundle\\DependencyInjection\\CompilerPass\\RegisterPagerfantaViewsPass' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/DependencyInjection/CompilerPass/RegisterPagerfantaViewsPass.php',
+        'BabDev\\PagerfantaBundle\\DependencyInjection\\CompilerPass\\RegisterTwigUndefinedCallablePass' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/DependencyInjection/CompilerPass/RegisterTwigUndefinedCallablePass.php',
+        'BabDev\\PagerfantaBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/DependencyInjection/Configuration.php',
+        'BabDev\\PagerfantaBundle\\EventListener\\ConvertNotValidCurrentPageToNotFoundListener' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/EventListener/ConvertNotValidCurrentPageToNotFoundListener.php',
+        'BabDev\\PagerfantaBundle\\EventListener\\ConvertNotValidMaxPerPageToNotFoundListener' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/EventListener/ConvertNotValidMaxPerPageToNotFoundListener.php',
+        'BabDev\\PagerfantaBundle\\RouteGenerator\\RequestAwareRouteGeneratorFactory' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/RouteGenerator/RequestAwareRouteGeneratorFactory.php',
+        'BabDev\\PagerfantaBundle\\RouteGenerator\\RouterAwareRouteGenerator' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/RouteGenerator/RouterAwareRouteGenerator.php',
+        'BabDev\\PagerfantaBundle\\Serializer\\Handler\\PagerfantaHandler' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/Serializer/Handler/PagerfantaHandler.php',
+        'BabDev\\PagerfantaBundle\\Serializer\\Normalizer\\PagerfantaNormalizer' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/Serializer/Normalizer/PagerfantaNormalizer.php',
+        'BabDev\\PagerfantaBundle\\Twig\\UndefinedCallableHandler' => __DIR__ . '/..' . '/babdev/pagerfanta-bundle/src/Twig/UndefinedCallableHandler.php',
         'Collator' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -2334,6 +2371,54 @@ class ComposerStaticInit7feb47bc8f225affa6d981fba7434e92
         'PackageVersions\\FallbackVersions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
         'PackageVersions\\Installer' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Installer.php',
         'PackageVersions\\Versions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Versions.php',
+        'Pagerfanta\\Adapter\\AdapterInterface' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/AdapterInterface.php',
+        'Pagerfanta\\Adapter\\ArrayAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/ArrayAdapter.php',
+        'Pagerfanta\\Adapter\\CallbackAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/CallbackAdapter.php',
+        'Pagerfanta\\Adapter\\ConcatenationAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/ConcatenationAdapter.php',
+        'Pagerfanta\\Adapter\\FixedAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/FixedAdapter.php',
+        'Pagerfanta\\Adapter\\NullAdapter' => __DIR__ . '/..' . '/pagerfanta/core/Adapter/NullAdapter.php',
+        'Pagerfanta\\Doctrine\\ORM\\QueryAdapter' => __DIR__ . '/..' . '/pagerfanta/doctrine-orm-adapter/QueryAdapter.php',
+        'Pagerfanta\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/InvalidArgumentException.php',
+        'Pagerfanta\\Exception\\LessThan1CurrentPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LessThan1CurrentPageException.php',
+        'Pagerfanta\\Exception\\LessThan1MaxPagesException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LessThan1MaxPagesException.php',
+        'Pagerfanta\\Exception\\LessThan1MaxPerPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LessThan1MaxPerPageException.php',
+        'Pagerfanta\\Exception\\LogicException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/LogicException.php',
+        'Pagerfanta\\Exception\\NotValidCurrentPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/NotValidCurrentPageException.php',
+        'Pagerfanta\\Exception\\NotValidMaxPerPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/NotValidMaxPerPageException.php',
+        'Pagerfanta\\Exception\\OutOfBoundsException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/OutOfBoundsException.php',
+        'Pagerfanta\\Exception\\OutOfRangeCurrentPageException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/OutOfRangeCurrentPageException.php',
+        'Pagerfanta\\Exception\\PagerfantaException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/PagerfantaException.php',
+        'Pagerfanta\\Exception\\RuntimeException' => __DIR__ . '/..' . '/pagerfanta/core/Exception/RuntimeException.php',
+        'Pagerfanta\\Pagerfanta' => __DIR__ . '/..' . '/pagerfanta/core/Pagerfanta.php',
+        'Pagerfanta\\PagerfantaInterface' => __DIR__ . '/..' . '/pagerfanta/core/PagerfantaInterface.php',
+        'Pagerfanta\\RouteGenerator\\RouteGeneratorDecorator' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorDecorator.php',
+        'Pagerfanta\\RouteGenerator\\RouteGeneratorFactoryInterface' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorFactoryInterface.php',
+        'Pagerfanta\\RouteGenerator\\RouteGeneratorInterface' => __DIR__ . '/..' . '/pagerfanta/core/RouteGenerator/RouteGeneratorInterface.php',
+        'Pagerfanta\\Twig\\Extension\\PagerfantaExtension' => __DIR__ . '/..' . '/pagerfanta/twig/Extension/PagerfantaExtension.php',
+        'Pagerfanta\\Twig\\Extension\\PagerfantaRuntime' => __DIR__ . '/..' . '/pagerfanta/twig/Extension/PagerfantaRuntime.php',
+        'Pagerfanta\\Twig\\View\\TwigView' => __DIR__ . '/..' . '/pagerfanta/twig/View/TwigView.php',
+        'Pagerfanta\\View\\DefaultView' => __DIR__ . '/..' . '/pagerfanta/core/View/DefaultView.php',
+        'Pagerfanta\\View\\Foundation6View' => __DIR__ . '/..' . '/pagerfanta/core/View/Foundation6View.php',
+        'Pagerfanta\\View\\OptionableView' => __DIR__ . '/..' . '/pagerfanta/core/View/OptionableView.php',
+        'Pagerfanta\\View\\SemanticUiView' => __DIR__ . '/..' . '/pagerfanta/core/View/SemanticUiView.php',
+        'Pagerfanta\\View\\TemplateView' => __DIR__ . '/..' . '/pagerfanta/core/View/TemplateView.php',
+        'Pagerfanta\\View\\Template\\DefaultTemplate' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/DefaultTemplate.php',
+        'Pagerfanta\\View\\Template\\Foundation6Template' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/Foundation6Template.php',
+        'Pagerfanta\\View\\Template\\SemanticUiTemplate' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/SemanticUiTemplate.php',
+        'Pagerfanta\\View\\Template\\Template' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/Template.php',
+        'Pagerfanta\\View\\Template\\TemplateInterface' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/TemplateInterface.php',
+        'Pagerfanta\\View\\Template\\TwitterBootstrap3Template' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/TwitterBootstrap3Template.php',
+        'Pagerfanta\\View\\Template\\TwitterBootstrap4Template' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/TwitterBootstrap4Template.php',
+        'Pagerfanta\\View\\Template\\TwitterBootstrap5Template' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/TwitterBootstrap5Template.php',
+        'Pagerfanta\\View\\Template\\TwitterBootstrapTemplate' => __DIR__ . '/..' . '/pagerfanta/core/View/Template/TwitterBootstrapTemplate.php',
+        'Pagerfanta\\View\\TwitterBootstrap3View' => __DIR__ . '/..' . '/pagerfanta/core/View/TwitterBootstrap3View.php',
+        'Pagerfanta\\View\\TwitterBootstrap4View' => __DIR__ . '/..' . '/pagerfanta/core/View/TwitterBootstrap4View.php',
+        'Pagerfanta\\View\\TwitterBootstrap5View' => __DIR__ . '/..' . '/pagerfanta/core/View/TwitterBootstrap5View.php',
+        'Pagerfanta\\View\\TwitterBootstrapView' => __DIR__ . '/..' . '/pagerfanta/core/View/TwitterBootstrapView.php',
+        'Pagerfanta\\View\\View' => __DIR__ . '/..' . '/pagerfanta/core/View/View.php',
+        'Pagerfanta\\View\\ViewFactory' => __DIR__ . '/..' . '/pagerfanta/core/View/ViewFactory.php',
+        'Pagerfanta\\View\\ViewFactoryInterface' => __DIR__ . '/..' . '/pagerfanta/core/View/ViewFactoryInterface.php',
+        'Pagerfanta\\View\\ViewInterface' => __DIR__ . '/..' . '/pagerfanta/core/View/ViewInterface.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',

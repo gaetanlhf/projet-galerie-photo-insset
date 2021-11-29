@@ -1,0 +1,31 @@
+@import url("lato.css");
+body,
+html {
+    color: #000000;
+    font-family: Lato, sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1700px;
+}
+
+.scale-on-hover {
+    transition: 0.5s ease;
+}
+
+.scale-on-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.dropdown-menu {
+    max-height: 280px;
+    overflow-y: auto;
+}

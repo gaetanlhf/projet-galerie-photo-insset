@@ -1,4 +1,7 @@
 {
+    "babdev/pagerfanta-bundle": {
+        "version": "v3.5.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },
@@ -111,6 +114,15 @@
     },
     "nikic/php-parser": {
         "version": "v4.13.0"
+    },
+    "pagerfanta/core": {
+        "version": "v3.4.0"
+    },
+    "pagerfanta/doctrine-orm-adapter": {
+        "version": "v3.4.0"
+    },
+    "pagerfanta/twig": {
+        "version": "v3.4.0"
     },
     "phar-io/manifest": {
         "version": "2.0.3"
