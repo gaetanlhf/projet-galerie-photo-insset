@@ -62,9 +62,9 @@
 		</div>
 	</div>
 </div>
-{% if (img is defined) and (img != null) %}
+{% if (images is defined) and (images != null) %}
 	<div class="d-flex align-items-center row justify-content-center">
-		{% for image in img %}
+		{% for image in images %}
 			<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
 				<div class="mb-3 box-shadow shadow-sm">
 					<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery"><img src="/uploaded/{{ image.fileLocalisation }}" class="img-fluid card-img-top scale-on-hover"></a>
@@ -80,11 +80,11 @@
 								</button>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 									{% if image.position != 0 %}
-										<a href="/mygallery/changepos?image={{ image.id }}&position=0" class="dropdown-item btn btn-primary">Dépublication</a>
+										<a href="/mygallery/changepos?image={{ image.id }}&position=0&page={{ page }}" class="dropdown-item btn btn-primary">Dépublication</a>
 									{% endif %}
 
 									{% for i in 1..countImg %}
-										<a href="/mygallery/changepos?image={{ image.id }}&position={{ i }}" class="dropdown-item btn btn-primary">Publier en position
+										<a href="/mygallery/changepos?image={{ image.id }}&position={{ i }}&page={{ page }}" class="dropdown-item btn btn-primary">Publier en position
 											{{ i }}</a>
 									{% endfor %}
 								</div>
@@ -109,7 +109,7 @@
 											</div>
 										</div>
 										<div class="modal-footer">
-											<a href="/mygallery/delete?image={{ image.id }}" class="btn btn-primary">
+											<a href="/mygallery/delete?image={{ image.id }}&page={{ page }}" class="btn btn-primary">
 												<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
 												Go !</a>
 										</div>
@@ -132,5 +132,10 @@
 				</div>
 			</div>
 		{% endfor %}
+		{% if images.haveToPaginate %}
+			<div class="d-flex justify-content-center pt-3 pb-3">
+				{{ pagerfanta(images) }}
+			</div>
+		{% endif %}
 	</div>
 {% endif %}
