@@ -25,8 +25,6 @@ class ImageRepository extends ServiceEntityRepository
             ->andWhere('i.user = :val')
             ->setParameter('val', $user)
             ->orderBy('i.position', 'ASC')
-            ->getQuery()
-            ->getResult()
         ;
     }
 
@@ -37,8 +35,6 @@ class ImageRepository extends ServiceEntityRepository
             ->setParameter('val', $user)
             ->andWhere('i.position != 0')
             ->orderBy('i.position', 'ASC')
-            ->getQuery()
-            ->getResult()
         ;
     }
 
