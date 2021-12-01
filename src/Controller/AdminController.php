@@ -22,10 +22,13 @@ class AdminController extends AbstractController
         $page = $request->query->get('page', 1);
 
         $users = $this->getDoctrine()->getRepository(User::class)->findAllUsers();
+        $pager = null;
 
-        $pager = new Pagerfanta(new QueryAdapter($users));
-        $pager->setMaxPerPage(12);
-        $pager->setCurrentPage($page);
+        if ($users) {
+            $pager = new Pagerfanta(new QueryAdapter($users));
+            $pager->setMaxPerPage(12);
+            $pager->setCurrentPage($page);
+        }
         return $this->render('home/index.html.twig', [
             'users' => $pager,
         ]);
