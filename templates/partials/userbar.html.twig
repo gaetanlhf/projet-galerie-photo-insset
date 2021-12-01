@@ -17,7 +17,7 @@
 	{% endfor %}
 	{{ render(controller('App\\Controller\\LoginController::login')) }}
 	<br>
-	{{ render(controller('App\\Controller\\RegistrationUIController::registerUI')) }}
+	{{ render(controller('App\\Controller\\RegistrationController::registerUI')) }}
 {% endif %}
 
 {% if app.user %}
