@@ -89,4 +89,18 @@ class RegistrationController extends AbstractController
         }
         return $string;
     }
+
+    public function registerUI(): Response
+    {
+        $user = new User();
+        $registrationForm = $this->createForm(RegistrationFormType::class, $user);
+
+
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        return $this->render('partials/register.html.twig', [
+            'registrationForm' => $registrationForm->createView(),
+            'users' => $users
+        ]);
+    }
 }
