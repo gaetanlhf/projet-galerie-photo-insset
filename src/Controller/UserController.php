@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MyGalleryController extends AbstractController
+class UserController extends AbstractController
 {
     #[Route('/mygallery', name: 'app_mygallery')]
     public function myGallery(Request $request): Response
