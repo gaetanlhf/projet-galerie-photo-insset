@@ -111,9 +111,9 @@
 			</tbody>
 		</table>
 	</div>
-{% endif %}
-{% if users.haveToPaginate %}
-	<div class="d-flex justify-content-center pt-3 pb-3">
-		{{ pagerfanta(users) }}
-	</div>
+	{% if users.haveToPaginate %}
+		<div class="d-flex justify-content-center pt-3 pb-3">
+			{{ pagerfanta(users) }}
+		</div>
+	{% endif %}
 {% endif %}
