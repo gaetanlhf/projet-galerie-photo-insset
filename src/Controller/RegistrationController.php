@@ -47,7 +47,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             $email = (new TemplatedEmail())
-                ->from("galeriephoto@gaetanlhf.fr")
+                ->from("gaetan.le.heurt.finot@insset.ovh")
                 ->to(new Address($user->getEmail()))
                 ->subject("Bienvenue sur Galerie Photo INSSET")
                 ->htmlTemplate("emails/signup.html.twig")
