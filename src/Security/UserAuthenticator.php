@@ -94,7 +94,7 @@ class UserAuthenticator extends AbstractLoginFormAuthenticator
                 $this->entityManager->persist($user);
                 $this->entityManager->flush();
                 $email = (new TemplatedEmail())
-                    ->from("galeriephoto@gaetanlhf.fr")
+                    ->from("gaetan.le.heurt.finot@insset.ovh")
                     ->to(new Address($user->getEmail()))
                     ->subject("Votre compte a été désactivé de Galerie Photo INSSET")
                     ->htmlTemplate("emails/deactivate.html.twig")

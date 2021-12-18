@@ -46,7 +46,7 @@ class AdminController extends AbstractController
             $entityManager->flush();
 
             $email = (new TemplatedEmail())
-                ->from("galeriephoto@gaetanlhf.fr")
+                ->from("gaetan.le.heurt.finot@insset.ovh")
                 ->to(new Address($user[0]->getEmail()))
                 ->subject("Supression de votre compte de Galerie photo INSSET")
                 ->htmlTemplate("emails/delete.html.twig")
@@ -84,7 +84,7 @@ class AdminController extends AbstractController
                 $entityManager->flush();
 
                 $email = (new TemplatedEmail())
-                ->from("galeriephoto@gaetanlhf.fr")
+                ->from("gaetan.le.heurt.finot@insset.ovh")
                 ->to(new Address($user[0]->getEmail()))
                 ->subject("Réactivation de votre compte sur Galerie photo INSSET")
                 ->htmlTemplate("emails/reactivate.html.twig")
