@@ -17,6 +17,9 @@ framework:
     php_errors:
         log: true
 
+    trusted_proxies: '192.0.0.1,10.0.0.0/8'
+    trusted_headers: ['forwarded']
+
 when@test:
     framework:
         test: true
