@@ -25,7 +25,7 @@ class RegistrationController extends AbstractController
         if ($registrationForm->isSubmitted() && $registrationForm->isValid()) {
 
             $user = $registrationForm->getData();
-            $password = $this->genPwd();
+            $password = $user->genPwd();
             $hashedPassword = $passwordHasher->hashPassword(
                 $user,
                 $password
@@ -76,18 +76,6 @@ class RegistrationController extends AbstractController
         $this->addFlash('register_err', $form_errors);
         
         return $this->redirectToRoute('app_home');
-    }
-
-    public function genPwd(): String
-    {
-        $length = "8";
-        $character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        $string = "";
-        $max = mb_strlen($character, '8bit') - 1;
-        for ($i = 0; $i < $length; ++$i) {
-            $string .= $character[random_int(0, $max)];
-        }
-        return $string;
     }
 
     public function registerUI(): Response

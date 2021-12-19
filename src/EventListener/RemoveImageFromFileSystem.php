@@ -35,8 +35,10 @@ class RemoveImageFromFileSystem implements EventSubscriber
             return;
         } else {
             $file = $entity->getfileLocalisation();
-            $folder = $this->param->get('img_path');
-            $this->filesystem->remove($folder.$file);
+            $folderImg = $this->param->get('img_path_internal');
+            $folderThumb = $this->param->get('img_path_thumb_internal');
+            $this->filesystem->remove($folderImg.$file);
+            $this->filesystem->remove($folderThumb.$file);
         }
     }
 }
