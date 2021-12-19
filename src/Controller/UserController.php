@@ -34,7 +34,7 @@ class UserController extends AbstractController
         $image = new Image();
         $uploadForm = $this->createForm(ImageType::class, $image);
 
-        return $this->render('home/index.html.twig', ['uploadForm' => $uploadForm->createView(), 'setTitle' => $setTitle, 'images' => $pager, 'page' => $page, 'countImg' => $countImg]);
+        return $this->render('index.html.twig', ['uploadForm' => $uploadForm->createView(), 'setTitle' => $setTitle, 'images' => $pager, 'page' => $page, 'countImg' => $countImg]);
     }
 
     #[Route('/mygallery/upload', name: 'app_mygallery_upload')]

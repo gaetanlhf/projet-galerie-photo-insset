@@ -8,7 +8,7 @@
 		</button>
 	</div>
 </div>
-{% if (img is defined) and (img == null) %}
+{% if (images is defined) and (images == null) %}
 	<div class="alert alert-info">
 		<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
 		Votre galerie est vide, ajoutez-une image pour commencer à partager vos photos avec le monde !<br>
@@ -34,7 +34,7 @@
 		{{ message }}<br>
 	</div>
 {% endfor %}
-<div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+<div class="modal fade" id="uploadModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -54,9 +54,12 @@
 				</div>
 			</div>
 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					<i class="fa fa-times-circle-o fa-fw" aria-hidden="true"></i>
+					Fermer</button>
 				<button type="submit" class="btn btn-primary">
-					<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
-					Go !</button>
+					<i class="fa fa-plus-square fa-fw" aria-hidden="true"></i>
+					Ajouter</button>
 			</div>
 			{{ form_end(uploadForm) }}
 		</div>
@@ -94,7 +97,7 @@
 							<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ image.id }}">
 								<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
 							</button>
-							<div class="modal fade" id="deleteModal{{ image.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModal{{ image.id }}Label" aria-hidden="true">
+							<div class="modal fade" id="deleteModal{{ image.id }}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteModal{{ image.id }}Label" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 									<div class="modal-content">
 										<div class="modal-header">
@@ -109,9 +112,12 @@
 											</div>
 										</div>
 										<div class="modal-footer">
-											<a href="/mygallery/delete?image={{ image.id }}&page={{ page }}" class="btn btn-primary">
-												<i class="fa fa-rocket fa-fw" aria-hidden="true"></i>
-												Go !</a>
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+												<i class="fa fa-times-circle-o fa-fw" aria-hidden="true"></i>
+												Non</button>
+											<a href="/mygallery/delete?image={{ image.id }}&page={{ page }}" class="btn btn-danger">
+												<i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+												Oui</a>
 										</div>
 									</div>
 								</div>
