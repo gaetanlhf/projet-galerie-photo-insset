@@ -23,7 +23,7 @@
 		{% endfor %}
 	</div>
 	{% if (randomUser.images|length >= 12) %}
-		<div class="d-flex justify-content-center pt-3 pb-3">
+		<div class="d-flex justify-content-center pb-3">
 			<a class="btn btn-primary text-align-center" href="/u/{{ randomUser.username }}" role="button"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Voir la galerie de {{ randomUser.username }} au complet</a>
 		</div>
 	{% endif %}
