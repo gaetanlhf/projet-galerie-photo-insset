@@ -1,0 +1,29 @@
+{% for success in app.flashes('login_suc') %}
+	<div class="alert alert-success">
+		<i class="fa fa-check fa-fw" aria-hidden="true"></i>
+		{{ success }}
+	</div>
+{% endfor %}
+
+<div class="card">
+	<div class="card-body text-center">
+		<h5 class="card-title">
+			<i class="fa fa-user fa-fw" aria-hidden="true"></i>
+			Panneau de l'utilisateur</h5>
+		<div class="btn-group-vertical">
+			<a class="btn btn-primary text-center" href="/u/{{ app.user.username }}">
+				<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
+				Voir ma galerie publique
+			</a>
+			<a class="btn btn-primary text-center" href="{{ path('app_mygallery') }}">
+				<i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+				Personnaliser ma galerie
+			</a>
+			<a class="btn btn-primary text-center" href="{{ path('app_logout') }}">
+				<i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
+				Se déconnecter
+			</a>
+		</div>
+
+	</div>
+</div>
