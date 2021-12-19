@@ -10,9 +10,9 @@
 	<div class="row justify-content-md-center">
 		{% for image in images %}
 			<div class="d-flex col-xl-3 col-lg-3 col-md-6 col-sm-12 align-items-center">
-				<a href="/uploaded/{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
+				<a href="{{ image.fileLocalisation }}" data-toggle="lightbox" data-gallery="gallery">
 					<div class="card d-flex flex-fill align-items-center">
-						<img src="/uploaded/{{ image.fileLocalisation }}" class="d-flex img-fluid card-img-top scale-on-hover">
+						<img src="{{ image.fileLocalisation|imagine_filter('squared_thumbnail_small') }}" class="d-flex img-fluid card-img-top scale-on-hover">
 					</div>
 				</a>
 			</div>
