@@ -27,7 +27,7 @@ class PublicController extends AbstractController
             $pager->setCurrentPage(1);
         }
 
-        return $this->render('home/index.html.twig', ['randomUser' => $randomUser, 'randomUserImg' => $pager]);
+        return $this->render('index.html.twig', ['randomUser' => $randomUser, 'randomUserImg' => $pager]);
     }
 
     #[Route('/u/{username}', name: 'app_usergallery')]
@@ -50,7 +50,7 @@ class PublicController extends AbstractController
                 $this->addFlash('gallery_err', 'La galerie photo de l\'utilisateur ' . $username . ' est vide.');
             }
         }
-        return $this->render('home/index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'images' => $pager]);
+        return $this->render('index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'images' => $pager]);
     }
 
     public function userList(): Response
