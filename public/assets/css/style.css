@@ -1,6 +1,10 @@
 @import url("lato.css");
-body,
 html {
+    position: relative;
+	min-height: 100%;
+}
+
+body {
     color: #000000;
     font-family: Lato, sans-serif;
     overflow-x: hidden;
@@ -28,4 +32,27 @@ html {
 .dropdown-menu {
     max-height: 280px;
     overflow-y: auto;
+}
+
+#main {
+    opacity: 0.35;
+    transition: opacity 0.4s;
+    pointer-events: none;
+}
+
+.spinner-container {
+	position: fixed;
+	visibility: visible;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.spinner-border {
+	width: 3rem;
+	height: 3rem;
 }
