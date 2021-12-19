@@ -58,7 +58,7 @@ class UserController extends AbstractController
             $uploadedFile->move($this->getParameter('img_path'), $newFilename);
 
             $image->setUser($user);
-            $image->setfileLocalisation($newFilename);
+            $image->setfileLocalisation($this->getParameter('img_path_public') . $newFilename);
             $image->setSize(filesize($uploadedFile));
             $image->setDate(new \DateTime('@' . strtotime('now')));
             $image->setPosition("0");
