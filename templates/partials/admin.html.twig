@@ -11,7 +11,7 @@
 		{{ message }}<br>
 	</div>
 {% endfor %}
-{% if users == null %}
+{% if users|length == 0 %}
 	<div class="alert alert-info">
 		<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
 		Il n'y a aucun utilisateur sur cette instance...
