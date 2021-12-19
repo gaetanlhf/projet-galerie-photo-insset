@@ -29,7 +29,7 @@ class AdminController extends AbstractController
             $pager->setMaxPerPage(12);
             $pager->setCurrentPage($page);
         }
-        return $this->render('home/index.html.twig', [
+        return $this->render('index.html.twig', [
             'users' => $pager,
         ]);
     }

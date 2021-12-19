@@ -27,7 +27,7 @@ class PublicController extends AbstractController
             $pager->setCurrentPage(1);
         }
 
-        return $this->render('home/index.html.twig', ['randomUser' => $randomUser, 'randomUserImg' => $pager]);
+        return $this->render('index.html.twig', ['randomUser' => $randomUser, 'randomUserImg' => $pager]);
     }
 
     #[Route('/u/{username}', name: 'app_usergallery')]
@@ -36,7 +36,6 @@ class PublicController extends AbstractController
         $page = $request->query->get('page', 1);
         $entityManager = $this->getDoctrine()->getManager();
         $user = $entityManager->getRepository(User::class)->findOneBy(['username' => $username]);
-        $img = null;
         $pager = null;
         if (!$user) {
             $setTitle = 'Galerie photo introuvable';
@@ -44,15 +43,14 @@ class PublicController extends AbstractController
         } else {
             $setTitle = 'Galerie photo de ' . $username;
             $img = $this->getDoctrine()->getRepository(Image::class)->findImagePublished($user);
-            if (!$img) {
+            $pager = new Pagerfanta(new QueryAdapter($img));
+            $pager->setMaxPerPage(12);
+            $pager->setCurrentPage($page);
+            if ($pager->getNbResults() == 0) {
                 $this->addFlash('gallery_err', 'La galerie photo de l\'utilisateur ' . $username . ' est vide.');
-            } else {
-                $pager = new Pagerfanta(new QueryAdapter($img));
-                $pager->setMaxPerPage(12);
-                $pager->setCurrentPage($page);
             }
         }
-        return $this->render('home/index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'images' => $pager]);
+        return $this->render('index.html.twig', ['username' => $username, 'setTitle' => $setTitle, 'images' => $pager]);
     }
 
     public function userList(): Response
