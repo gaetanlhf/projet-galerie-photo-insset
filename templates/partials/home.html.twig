@@ -4,15 +4,15 @@
 		<div class="alert alert-info">
 			<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
 			Un aperçu de la galerie photo de
-			<a href="/u/{{ randomUser.username }}"><span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span></a>
+			<a href="/u/{{ randomUser.username }}">
+				<span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span>
+			</a>
 			a été sélectionnée aléatoirement pour vos petits yeux.
 		</div>
 	{% else %}
 		<div class="alert alert-info">
 			<i class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
-			La galerie photo de
-			<a href="/u/{{ randomUser.username }}"><span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span></a>
-			a été sélectionnée aléatoirement pour vos petits yeux.
+			La galerie photo de <a href="/u/{{ randomUser.username }}"><span class="badge rounded-pill bg-primary">{{ randomUser.username }}</span></a> a été sélectionnée aléatoirement pour vos petits yeux.
 		</div>
 	{% endif %}
 	<div class="row justify-content-md-center align-items-center">
@@ -26,6 +26,11 @@
 			</div>
 		{% endfor %}
 	</div>
+	{% if (randomUser.images|length >= 12) %}
+		<div class="d-flex justify-content-center pt-3 pb-3">
+			<a class="btn btn-primary text-align-center" href="/u/{{ randomUser.username }}" role="button"><i class="fa fa-picture-o fa-fw" aria-hidden="true"></i> Voir la galerie de {{ randomUser.username }} au complet</a>
+		</div>
+	{% endif %}
 {% else %}
 	<div class="alert alert-info">
 		<i class="fa fa-frown-o fa-fw" aria-hidden="true"></i>
