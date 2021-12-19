@@ -8,7 +8,7 @@
 		</button>
 	</div>
 </div>
-{% if (images is defined) and (images == null) %}
+{% if (images is defined) and (images|length == 0) %}
 	<div class="alert alert-info">
 		<i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
 		Votre galerie est vide, ajoutez-une image pour commencer à partager vos photos avec le monde !<br>
