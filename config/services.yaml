@@ -8,7 +8,7 @@ parameters:
     img_path: '%kernel.project_dir%/public/uploaded/'
     img_path_internal: '%kernel.project_dir%/public'
     img_path_public: '/uploaded/'
-    img_path_thumb_internal: '%kernel.project_dir%public/media/cache/thumbnail_small'
+    img_path_thumb_internal: '%kernel.project_dir%/public/media/cache/thumbnail_small'
 
 
 services:
