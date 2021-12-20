@@ -1,18 +1,20 @@
 {% if not app.user %}
 	{% for errors in app.flashes('register_err') %}
-		<div class="alert alert-danger">
+		<div class="alert alert-danger alert-dismissible fade show">
 			<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
 			L'inscription a échoué :
 			{% for error in errors %}
 				{{ error }}<br>
 			{% endfor %}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
 	{% endfor %}
 
 	{% for success in app.flashes('register_suc') %}
-		<div class="alert alert-success">
+		<div class="alert alert-success alert-dismissible fade show">
 			<i class="fa fa-check fa-fw" aria-hidden="true"></i>
 			{{ success }}
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
 	{% endfor %}
 	{{ render(controller('App\\Controller\\LoginController::login')) }}
