@@ -13,7 +13,7 @@ Le formulaire d’authentification se trouve en haut à droite, demandant d’en
 - une adresse de courriel,
 - un mot de passe.
 
-### 2.2. Un internaute demande un compte
+### 2. Un internaute demande un compte
 Une boîte de dialogue apparaît avec un formulaire demandant les informations suivantes :
 
 - un pseudo,
@@ -25,7 +25,7 @@ Tant que le formulaire n’est pas correctement rempli, la validation boucle sur
 Après la validation de son inscription, l’internaute reçoit par courriel un mot de passe généré lui permettant de se connecter à son compte.  
 Après la validation de son inscription, il est redirigé sur la page consultée avant l’accès au formulaire.
 
-### 2.3. Un utilisateur accède à son compte
+### 3. Un utilisateur accède à son compte
 Contrainte : si l’utilisateur se trompe trois fois de mots de passe, son compte est bloqué (faire le décompte des échecs et prévenir avant blocage).  
 Les photos doivent être affichées dans un damier de quatre colonnes et de trois lignes.  
 Scroll du damier pour naviguer dans les photos.  
@@ -37,7 +37,7 @@ Sous chaque photo, deux cases doivent être présentes :
 
 La date d’ajout et la taille de chaque photo doivent être également affichées.
 
-### 2.4. Un utilisateur ajoute une photo
+### 4. Un utilisateur ajoute une photo
 L’utilisateur authentifié ouvre une boîte de dialogue, qui comprend :
 
 - un champ pour téléverser une photo,
@@ -50,25 +50,25 @@ Après validation, le serveur effectue les vérifications suivantes sur la photo
 
 Si tout est correct, la photo est ajoutée au damier, sinon, retour au formulaire avec informations sur l’erreur.
 
-### 2.5. Un utilisateur publie une photo
+### 5. Un utilisateur publie une photo
 L’utilisateur publie une photo en indiquant un numéro d’ordre à la photo.  
 S’il n’y a pas de numéro d’ordre, la photo n’est pas publiée dans la galerie.
 
-### 2.6. Un utilisateur supprime une photo
+### 6. Un utilisateur supprime une photo
 Via le bouton suppression sous la photo.  
 La suppression se fait après une confirmation.
 
-### 2.7. Un utilisateur se déconnecte de son compte
+### 7. Un utilisateur se déconnecte de son compte
 Via un bouton situé en haut à droite.  
 Après déconnexion, l’utilisateur retourne sur la page d’accueil publique.
 
-### 2.8. L'administrateur accède à son compte
+### 8. L'administrateur accède à son compte
 Il accède à une liste des utilisateurs.  
 Il peut :
 
 - supprimer un compte utilisateur (cela inclut toutes les photos),
 - débloquer un compte.
 
-### 2.9. Un administrateur se déconnecte de son compte
+### 9. Un administrateur se déconnecte de son compte
 Via un bouton situé en haut à droite.  
 Après déconnexion, l’administrateur retourne sur la page d’accueil.
