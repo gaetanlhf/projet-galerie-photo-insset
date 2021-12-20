@@ -65,6 +65,6 @@ class PublicController extends AbstractController
             $usersData = null;
         }
 
-        return $this->render('partials/gallerybar.html.twig', ['users' => $usersData]);
+        return $this->render('partials/gallerylist.html.twig', ['users' => $usersData]);
     }
 }

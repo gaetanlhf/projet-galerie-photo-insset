@@ -10,9 +10,7 @@
 				Utilisateurs</h5>
 		{% endif %}
 		{% for user in users %}
-			<a href="/u/{{ user.username }}">
-				<span class="badge rounded-pill bg-primary">{{ user.username }}</span>
-			</a>
+			<a href="/u/{{ user.username }}"><span class="badge rounded-pill bg-primary">{{ user.username }}</span></a>
 		{% endfor %}
 	{% else %}
 		<div class="alert alert-info">
