@@ -1,6 +1,7 @@
 # Projet 2021 Gaëtan LE HEURT-FINOT
 Sujet : Galerie photo  
 Cours : Framework et Modélisation des systèmes  
+Cursus : Licence 3 Sciences et Technologies parcours Métiers du Numérique  
 Année universitaire : 2021/2022
 
 ## Cahier des charges
