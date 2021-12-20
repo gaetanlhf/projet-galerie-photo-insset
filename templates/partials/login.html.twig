@@ -1,19 +1,23 @@
 {% for message in app.flashes('log_err') %}
-	<div class="alert alert-danger">
+	<div class="alert alert-danger alert-dismissible fade show">
 		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
 		{{ message }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 {% endfor %}
 {% for message in app.flashes('logout_suc') %}
-	<div class="alert alert-success">
+	<div class="alert alert-success alert-dismissible fade show">
 		<i class="fa fa-check fa-fw" aria-hidden="true"></i>
 		{{ message }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 {% endfor %}
 {% if error %}
-	<div class="alert alert-danger">
+	<div class="alert alert-danger alert-dismissible fade show">
 		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
-		{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{{ error.messageKey|trans(error.messageData, 'security') }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
 {% endif %}
 <div class="card">
 	<div class="card-body text-center">

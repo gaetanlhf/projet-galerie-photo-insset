@@ -1,7 +1,8 @@
 {% for success in app.flashes('login_suc') %}
-	<div class="alert alert-success">
+	<div class="alert alert-success alert-dismissible fade show">
 		<i class="fa fa-check fa-fw" aria-hidden="true"></i>
 		{{ success }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
 {% endfor %}
 
