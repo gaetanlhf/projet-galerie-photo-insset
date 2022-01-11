@@ -89,7 +89,7 @@ Après déconnexion, l’administrateur retourne sur la page d’accueil.
 <img src="/.img/galerie_publique.png"/>
 
 ### Gestion de la galerie photo d’un utilisateur
-<img src="/.img/galerie_privée.png"/>
+<img src="/.img/galerie_privee.png"/>
 
 ### Boîte de dialogue d’ajout d’une photo
 <img src="/.img/ajout_photo.png"/>
