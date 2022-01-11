@@ -57,25 +57,29 @@ class RegistrationController extends AbstractController
                 ]);
 
             $mailer->send($email);
-            
+
             if ($user->getRoles() == ["ROLE_ADMIN"]) {
                 $this->addFlash('register_suc', "Étant le premier utilisateur de cette instance, vous êtes désormais l'administrateur. Votre mot de passe vous été envoyé par courriel.");
             } else {
                 $this->addFlash('register_suc', "Vous êtes désormais inscrit ! Votre mot de passe vous été envoyé par courriel.");
             }
+        } else {
+            $form_errors = array();
 
+            foreach ($registrationForm->getErrors(true) as $error) {
+                $form_errors[] = $error->getMessage();
+            }
+
+            $this->addFlash('register_err', $form_errors);
+        }
+
+        $referer = $request->headers->get('referer');
+
+        if ($referer) {
+            return $this->redirect($referer);
+        } else {
             return $this->redirectToRoute('app_home');
         }
-
-        $form_errors = array();
-
-        foreach ($registrationForm->getErrors(true) as $error) {
-            $form_errors[] = $error->getMessage();
-        }
-
-        $this->addFlash('register_err', $form_errors);
-        
-        return $this->redirectToRoute('app_home');
     }
 
     public function registerUI(): Response
