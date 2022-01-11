@@ -36,6 +36,7 @@ class LoginFailureListener implements EventSubscriberInterface
         $request = $event->getRequest();
         $email = $request->request->get('email');
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $email]);
+        $admin = $this->entityManager->getRepository(User::class)->findOneBy(['id' => '1']);
         if (!$user) {
             $this->flashBag->add("log_err", "La connexion a échoué, aucun compte n'a été trouvé.");
         } else {
@@ -64,7 +65,16 @@ class LoginFailureListener implements EventSubscriberInterface
                     ->context([
                         'username' => $user->getUsername()
                     ]);
-
+                $this->mailer->send($email);
+                $email = (new TemplatedEmail())
+                    ->from("gaetan.le.heurt.finot@insset.ovh")
+                    ->to(new Address($admin->getEmail()))
+                    ->subject("Le compte d'un utilisateur a été désactivé de Galerie photo INSSET")
+                    ->htmlTemplate("emails/deactivate_admin_warn.html.twig")
+                    ->context([
+                        'username' => $admin->getUsername(),
+                        'deactivated_user' => $user->getUsername()
+                    ]);
                 $this->mailer->send($email);
                 $this->flashBag->add("log_err", "Vous avez entré trois fois un mot de passe erroné. Par sécurité, votre compte est désormais désactivé. Veuillez contacter un administrateur pour qu'il vous le réactive.");
             }
