@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace App\EventSubscriber;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Events;
@@ -11,7 +11,6 @@ use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
 
 class RemoveImageFromFileSystem implements EventSubscriber
 {
-
     private $filesystem;
     private $param;
 
@@ -37,8 +36,8 @@ class RemoveImageFromFileSystem implements EventSubscriber
             $file = $entity->getfileLocalisation();
             $folderImg = $this->param->get('img_path_internal');
             $folderThumb = $this->param->get('img_path_thumb_internal');
-            $this->filesystem->remove($folderImg.$file);
-            $this->filesystem->remove($folderThumb.$file);
+            $this->filesystem->remove($folderImg . $file);
+            $this->filesystem->remove($folderThumb . $file);
         }
     }
 }
