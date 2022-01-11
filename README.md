@@ -1,5 +1,5 @@
 <div>
-  <h3 align="center"><img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/logo.png"/><br>Galerie photo INSSET</h3>
+  <h3 align="center"><img src="/.img/logo.png"/><br>Galerie photo INSSET</h3>
 </div>
 
 # Introduction
