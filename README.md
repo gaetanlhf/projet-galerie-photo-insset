@@ -7,7 +7,7 @@ Année universitaire : 2021/2022
 ## Cahier des charges
 ### 1. Un internaute se connecte au site
 Une galerie est affichée, choisie aléatoirement parmi les utilisateurs ayant publié des photos.  
-Les autres galeries sont listées à gauches, identifiées par le pseudo de l’utilisateur.  
+Les autres galeries sont listées à gauche, identifiées par le pseudo de l’utilisateur.  
 Le formulaire d’authentification se trouve en haut à droite, demandant d’entrer :
 
 - une adresse de courriel,
