@@ -49,7 +49,7 @@ class RegistrationController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from("gaetan.le.heurt.finot@insset.ovh")
                 ->to(new Address($user->getEmail()))
-                ->subject("Bienvenue sur Galerie Photo INSSET")
+                ->subject("Bienvenue sur Galerie photo INSSET")
                 ->htmlTemplate("emails/signup.html.twig")
                 ->context([
                     'username' => $user->getUsername(),

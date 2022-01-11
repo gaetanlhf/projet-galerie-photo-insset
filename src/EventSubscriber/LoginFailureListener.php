@@ -59,7 +59,7 @@ class LoginFailureListener implements EventSubscriberInterface
                 $email = (new TemplatedEmail())
                     ->from("gaetan.le.heurt.finot@insset.ovh")
                     ->to(new Address($user->getEmail()))
-                    ->subject("Votre compte a été désactivé de Galerie Photo INSSET")
+                    ->subject("Votre compte a été désactivé de Galerie photo INSSET")
                     ->htmlTemplate("emails/deactivate.html.twig")
                     ->context([
                         'username' => $user->getUsername()
