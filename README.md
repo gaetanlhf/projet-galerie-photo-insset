@@ -1,4 +1,9 @@
-# Projet 2021 Gaëtan LE HEURT-FINOT
+<div>
+  <h3 align="center"><img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/logo.png"/><br>Galerie photo INSSET</h3>
+</div>
+
+# Introduction
+Étudiant : Gaëtan LE HEURT-FINOT  
 Sujet : Galerie photo  
 Cours : Framework et Modélisation des systèmes  
 Cursus : Licence 3 Sciences et Technologies parcours Métiers du Numérique  
@@ -72,3 +77,31 @@ Il peut :
 ### 9. Un administrateur se déconnecte de son compte
 Via un bouton situé en haut à droite.  
 Après déconnexion, l’administrateur retourne sur la page d’accueil.
+
+## Captures d'écran
+### Page d’accueil
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/accueil.png"/>
+
+### Boîte de dialogue d’inscription
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/inscription.png"/>
+
+### Visite d’une galerie photo publique
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/galerie_publique.png"/>
+
+### Gestion de la galerie photo d’un utilisateur
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/galerie_privée.png"/>
+
+### Boîte de dialogue d’ajout d’une photo
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/ajout_photo.png"/>
+
+### Boîte de dialogue de suppression d’une photo
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/suppression_photo.png"/>
+
+### Interface de gestion des utilisateurs
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/interface_admin.png"/>
+
+### Boîte de dialogue de suppression d’un compte utilisateur
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/suppression_compte.png"/>
+
+### Boîte de dialogue de réactivation d’un compte utilisateur
+<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/reactivation_compte.png"/>
