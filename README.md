@@ -80,28 +80,28 @@ Après déconnexion, l’administrateur retourne sur la page d’accueil.
 
 ## Captures d'écran
 ### Page d’accueil
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/accueil.png"/>
+<img src="/.img/accueil.png"/>
 
 ### Boîte de dialogue d’inscription
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/inscription.png"/>
+<img src="/.img/inscription.png"/>
 
 ### Visite d’une galerie photo publique
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/galerie_publique.png"/>
+<img src="/.img/galerie_publique.png"/>
 
 ### Gestion de la galerie photo d’un utilisateur
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/galerie_privée.png"/>
+<img src="/.img/galerie_privée.png"/>
 
 ### Boîte de dialogue d’ajout d’une photo
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/ajout_photo.png"/>
+<img src="/.img/ajout_photo.png"/>
 
 ### Boîte de dialogue de suppression d’une photo
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/suppression_photo.png"/>
+<img src="/.img/suppression_photo.png"/>
 
 ### Interface de gestion des utilisateurs
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/interface_admin.png"/>
+<img src="/.img/interface_admin.png"/>
 
 ### Boîte de dialogue de suppression d’un compte utilisateur
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/suppression_compte.png"/>
+<img src="/.img/suppression_compte.png"/>
 
 ### Boîte de dialogue de réactivation d’un compte utilisateur
-<img src="https://raw.githubusercontent.com/INSSET/projet-2021-gaetan-le-heurt-finot/main/.img/reactivation_compte.png"/>
+<img src="/.img/reactivation_compte.png"/>
